@@ -121,7 +121,7 @@ export function Footer() {
             © {new Date().getFullYear()} UBX. All rights reserved.
           </p>
           <nav className="flex gap-4 text-sm">
-            <Link href="#" className="transition-colors hover:text-primary">
+            <Link href="/privacy-policy" className="transition-colors hover:text-primary">
               Privacy Policy
             </Link>
             <Link href="/terms" className="transition-colors hover:text-primary">
