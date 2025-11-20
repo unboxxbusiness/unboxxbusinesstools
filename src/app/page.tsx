@@ -1,17 +1,7 @@
-import Header from '@/components/landing/header';
-import Hero from '@/components/landing/hero';
-import Features from '@/components/landing/features';
-import Footer from '@/components/landing/footer';
-
-export default function LandingPage() {
+export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <Features />
-      </main>
-      <Footer />
-    </div>
+    <main className="flex min-h-screen flex-col items-center justify-center p-24">
+      <h1 className="text-4xl font-bold">Hello, World!</h1>
+    </main>
   );
 }
