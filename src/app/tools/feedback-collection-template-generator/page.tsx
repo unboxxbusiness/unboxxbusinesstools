@@ -4,7 +4,7 @@ import HowToUse from "@/components/feedback-collection-template-generator/HowToU
 
 export default function FeedbackCollectionTemplateGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Feedback Collection Template Generator</h1>

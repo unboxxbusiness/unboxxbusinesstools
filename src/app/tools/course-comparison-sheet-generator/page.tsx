@@ -4,7 +4,7 @@ import HowToUse from "@/components/course-comparison-sheet-generator/HowToUse";
 
 export default function CourseComparisonSheetGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Course Comparison Sheet Generator</h1>

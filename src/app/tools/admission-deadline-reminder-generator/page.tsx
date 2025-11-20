@@ -4,7 +4,7 @@ import AdmissionDeadlineReminderTool from "@/components/admission-deadline-remin
 
 export default function AdmissionDeadlineReminderGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Admission Deadline Reminder Generator</h1>

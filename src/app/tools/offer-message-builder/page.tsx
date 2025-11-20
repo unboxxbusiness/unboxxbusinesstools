@@ -4,7 +4,7 @@ import OfferMessageBuilderTool from "@/components/offer-message-builder/OfferMes
 
 export default function OfferMessageBuilderPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Offer Message Builder</h1>

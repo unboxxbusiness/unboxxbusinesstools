@@ -4,7 +4,7 @@ import HowToUse from "@/components/demo-reminder-message-builder/HowToUse";
 
 export default function DemoReminderBuilderPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Demo Reminder Message Builder</h1>

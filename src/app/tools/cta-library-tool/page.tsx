@@ -4,7 +4,7 @@ import HowToUse from "@/components/cta-library-tool/HowToUse";
 
 export default function CtaLibraryPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">CTA Library Tool</h1>

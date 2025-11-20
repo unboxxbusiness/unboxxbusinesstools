@@ -4,7 +4,7 @@ import DailyPlannerTool from "@/components/daily-counsellor-planner-generator/Da
 
 export default function DailyCounsellorPlannerPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12 print:hidden">
         <h1 className="text-4xl font-bold tracking-tight">Daily Counsellor Planner Generator</h1>

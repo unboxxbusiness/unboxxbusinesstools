@@ -4,7 +4,7 @@ import InstagramCaptionTool from "@/components/instagram-caption-generator/Insta
 
 export default function InstagramCaptionGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Instagram Caption Generator</h1>

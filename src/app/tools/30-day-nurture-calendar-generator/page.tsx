@@ -4,7 +4,7 @@ import NurtureCalendarTool from "@/components/30-day-nurture-calendar-generator/
 
 export default function NurtureCalendarGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">30-Day Nurture Calendar Generator</h1>

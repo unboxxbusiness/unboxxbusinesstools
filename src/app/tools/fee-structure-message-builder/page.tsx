@@ -4,7 +4,7 @@ import HowToUse from "@/components/fee-structure-message-builder/HowToUse";
 
 export default function FeeStructureMessageBuilderPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Fee Structure Message Builder</h1>

@@ -4,7 +4,7 @@ import LeadRevivalTool from "@/components/lead-revival-template-generator/LeadRe
 
 export default function LeadRevivalTemplateGeneratorPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Lead Revival Template Generator</h1>

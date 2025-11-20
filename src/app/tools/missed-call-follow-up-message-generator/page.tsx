@@ -4,7 +4,7 @@ import MissedCallFollowUpTool from "@/components/missed-call-follow-up-message-g
 
 export default function MissedCallFollowUpPage() {
   return (
-    <div className="container py-12">
+    <div className="container py-12 pt-24">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Missed-Call Follow-Up Message Generator</h1>
