@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3 } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -22,6 +22,12 @@ const tools = [
     description: 'Track where your inquiries come from to optimize marketing spend.',
     href: '/tools/lead-source-tracker',
     icon: <IconChartPie />,
+  },
+  {
+    title: 'After-Hours Lead Handling Script Library',
+    description: 'Provides pre-written messages for late-night student inquiries.',
+    href: '/tools/after-hours-lead-handling-script-library',
+    icon: <IconClockHour3 />,
   }
 ];
 
