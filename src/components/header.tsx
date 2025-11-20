@@ -5,7 +5,7 @@ import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from './ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetClose } from './ui/sheet'
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -175,17 +175,21 @@ export const HeroHeader = () => {
                              <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                             <div className="flex flex-col p-4 space-y-2">
                                 <div className='pb-4'>
+                                    <SheetClose asChild>
                                      <Link
                                         href="/"
                                         aria-label="home"
                                         className="flex items-center space-x-2">
                                         <Logo />
                                     </Link>
+                                    </SheetClose>
                                 </div>
                                 {mobileNavLinks.map(link => (
-                                    <Link key={link.href} href={link.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
-                                        {link.label}
-                                    </Link>
+                                    <SheetClose asChild key={link.href}>
+                                        <Link href={link.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                            {link.label}
+                                        </Link>
+                                    </SheetClose>
                                 ))}
                                 <Accordion type="single" collapsible>
                                     <AccordionItem value="tools" className="border-b-0">
@@ -195,23 +199,31 @@ export const HeroHeader = () => {
                                         <AccordionContent className="pl-4">
                                             <div className="flex flex-col space-y-1 mt-1">
                                                 {topTools.map(tool => (
-                                                    <Link key={tool.href} href={tool.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
-                                                        {tool.title}
-                                                    </Link>
+                                                    <SheetClose asChild key={tool.href}>
+                                                        <Link href={tool.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                                            {tool.title}
+                                                        </Link>
+                                                    </SheetClose>
                                                 ))}
-                                                <Link href="/tools" className="px-4 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary rounded-md hover:bg-muted">
-                                                    View all tools...
-                                                </Link>
+                                                <SheetClose asChild>
+                                                    <Link href="/tools" className="px-4 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                                        View all tools...
+                                                    </Link>
+                                                </SheetClose>
                                             </div>
                                         </AccordionContent>
                                     </AccordionItem>
                                 </Accordion>
-                                <Link href="/book-demo" className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
-                                    Book Demo
-                                </Link>
+                                <SheetClose asChild>
+                                    <Link href="/book-demo" className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                        Book Demo
+                                    </Link>
+                                </SheetClose>
+                                <SheetClose asChild>
                                  <Button asChild>
                                     <Link href="/book-demo">Book Demo</Link>
                                 </Button>
+                                </SheetClose>
                              </div>
                           </SheetContent>
                         </Sheet>
