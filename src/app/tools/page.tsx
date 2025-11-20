@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -166,6 +166,15 @@ const leadConversionTools = [
   }
 ];
 
+const marketingTools = [
+  {
+    title: 'Facebook/Instagram Ad Copy Generator',
+    description: 'Provides short, medium, and long ad copy templates based on your offer.',
+    href: '/tools/facebook-instagram-ad-copy-generator',
+    icon: <IconAd />,
+  }
+];
+
 const analysisTools = [
     {
     title: 'Conversion Rate Analyzer',
@@ -175,7 +184,7 @@ const analysisTools = [
   },
 ]
 
-const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...analysisTools];
+const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...marketingTools, ...analysisTools];
 
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -194,6 +203,7 @@ export default function ToolsPage() {
   const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
   const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
   const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
+  const displayedMarketingTools = filteredTools.filter(tool => marketingTools.includes(tool));
   const displayedAnalysisTools = filteredTools.filter(tool => analysisTools.includes(tool));
 
   return (
@@ -239,6 +249,15 @@ export default function ToolsPage() {
               🎯 Lead Conversion &amp; Closing Tools
             </h2>
             <ToolsGrid tools={displayedConversionTools} />
+          </div>
+        )}
+
+        {displayedMarketingTools.length > 0 && (
+          <div className="w-full mb-16">
+            <h2 className="text-2xl font-bold text-center">
+              📣 Marketing &amp; Ad Tools
+            </h2>
+            <ToolsGrid tools={displayedMarketingTools} />
           </div>
         )}
 
