@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -47,6 +47,12 @@ const tools = [
     href: '/tools/landing-page-headline-generator',
     icon: <IconTypography />,
   },
+  {
+    title: 'Inquiry Qualification Checklist Tool',
+    description: 'Helps classify leads as Hot, Warm, or Cold based on key criteria.',
+    href: '/tools/inquiry-qualification-checklist-tool',
+    icon: <IconListCheck />,
+  }
 ];
 
 export default function ToolsPage() {
