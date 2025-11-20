@@ -1,5 +1,6 @@
 import BenefitsSection from "@/components/BenefitsSection";
 import Features from "@/components/Features";
+import FinalCtaSection from "@/components/FinalCtaSection";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import ToolsByCategory from "@/components/ToolsByCategory";
@@ -14,6 +15,7 @@ export default function Home() {
       <HowItWorks />
       <ToolsByCategory />
       <BenefitsSection />
+      <FinalCtaSection />
     </>
   );
 }
