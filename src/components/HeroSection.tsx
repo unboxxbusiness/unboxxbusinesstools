@@ -1,11 +1,12 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import Image from 'next/image';
-import { TextEffect } from '@/components/motion-primitives/text-effect';
-import { AnimatedGroup } from '@/components/motion-primitives/animated-group';
-import { HeroHeader } from "@/components/header";
+import React from 'react'
+import Link from 'next/link'
+import { ArrowRight, ChevronRight } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import Image from 'next/image'
+import { TextEffect } from '@/components/motion-primitives/text-effect'
+import { AnimatedGroup } from '@/components/motion-primitives/animated-group'
+import { HeroHeader } from "@/components/header"
 
 const transitionVariants = {
     item: {
@@ -25,7 +26,7 @@ const transitionVariants = {
             },
         },
     },
-};
+}
 
 export default function HeroSection() {
     return (
@@ -91,5 +92,5 @@ export default function HeroSection() {
                 </section>
             </main>
         </>
-    );
+    )
 }
