@@ -1,4 +1,6 @@
+
 'use client';
+import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
@@ -56,6 +58,18 @@ const tools = [
 ];
 
 export default function ToolsPage() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredTools, setFilteredTools] = useState(tools);
+
+  useEffect(() => {
+    const lowercasedQuery = searchQuery.toLowerCase();
+    const filtered = tools.filter(tool => 
+      tool.title.toLowerCase().includes(lowercasedQuery) || 
+      tool.description.toLowerCase().includes(lowercasedQuery)
+    );
+    setFilteredTools(filtered);
+  }, [searchQuery]);
+
   return (
     <>
       <section className="py-24 lg:py-32 text-center w-full">
@@ -74,6 +88,8 @@ export default function ToolsPage() {
               type="search"
               placeholder="Search for a tool..."
               className="pl-10 h-12 text-base"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
           </div>
         </div>
@@ -83,7 +99,7 @@ export default function ToolsPage() {
         <h2 className="text-2xl font-bold text-center mb-4">
           ⭐ Lead Capture & Qualification Tools
         </h2>
-        <ToolsGrid tools={tools} />
+        <ToolsGrid tools={filteredTools} />
       </div>
     </>
   );
