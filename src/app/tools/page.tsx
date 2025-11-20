@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator } from '@tabler/icons-react';
+import { IconCalculator, IconScript } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -11,6 +11,12 @@ const tools = [
     href: '/tools/lead-leakage-calculator',
     icon: <IconCalculator />,
   },
+  {
+    title: 'Inquiry Auto-Reply Script Generator',
+    description: 'Static templates based on course + question type.',
+    href: '/tools/inquiry-auto-reply-script-generator',
+    icon: <IconScript />,
+  }
 ];
 
 export default function ToolsPage() {
