@@ -1,14 +1,13 @@
 'use client';
 import * as React from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Send, Twitter } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 import { Logo } from "./Logo";
 import Link from "next/link";
 
@@ -101,25 +100,13 @@ export function Footer() {
             </address>
           </div>
            <div className="relative">
-            <h2 className="mb-4 text-xl font-bold tracking-tight">Stay Connected</h2>
+            <h2 className="mb-4 text-xl font-bold tracking-tight">Automate Your Admissions</h2>
             <p className="mb-6 text-muted-foreground">
-              Join our newsletter for the latest updates on tools and strategies.
+              Turn these tools into a 24/7 AI system that captures, nurtures, and converts leads for you.
             </p>
-            <form className="relative">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 backdrop-blur-sm"
-              />
-              <Button
-                type="submit"
-                size="icon"
-                className="absolute right-1 top-1 h-8 w-8 rounded-full bg-primary text-primary-foreground transition-transform hover:scale-105"
-              >
-                <Send className="h-4 w-4" />
-                <span className="sr-only">Subscribe</span>
-              </Button>
-            </form>
+            <Button asChild>
+                <Link href="#">Book a Free AI Demo</Link>
+            </Button>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
