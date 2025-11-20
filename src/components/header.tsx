@@ -6,6 +6,86 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from './ui/sheet'
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+  } from "@/components/ui/navigation-menu"
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp, IconSearch } from '@tabler/icons-react';
+
+const leadCaptureTools = [
+  {
+    title: 'Lead Leakage Calculator',
+    description: 'Shows lost inquiries & revenue.',
+    href: '/tools/lead-leakage-calculator',
+    icon: <IconCalculator />,
+  },
+  {
+    title: 'Inquiry Auto-Reply Script Generator',
+    description: 'Static templates based on course + question type.',
+    href: '/tools/inquiry-auto-reply-script-generator',
+    icon: <IconScript />,
+  },
+  {
+    title: 'Lead Source Tracker',
+    description: 'Track where your inquiries come from to optimize marketing spend.',
+    href: '/tools/lead-source-tracker',
+    icon: <IconChartPie />,
+  },
+];
+
+const communicationTools = [
+  {
+    title: 'WhatsApp Templates Library',
+    description: '100+ templates for follow-ups, fees, demos, and more.',
+    href: '/tools/whatsapp-templates-library',
+    icon: <IconBrandWhatsapp />,
+  },
+  {
+    title: '7-Day Follow-Up Sequence Generator',
+    description: 'Generates a 7-day WhatsApp plan to nurture new leads.',
+    href: '/tools/7-day-follow-up-sequence-generator',
+    icon: <IconTimeline />,
+  },
+  {
+    title: '30-Day Nurture Calendar Generator',
+    description: 'Creates a month-long engagement plan for undecided leads.',
+    href: '/tools/30-day-nurture-calendar-generator',
+    icon: <IconCalendarMonth />,
+  },
+];
+
+const allTools = [...leadCaptureTools, ...communicationTools];
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
+
 
 export const HeroHeader = () => {
     const [isScrolled, setIsScrolled] = React.useState(false)
@@ -19,6 +99,11 @@ export const HeroHeader = () => {
     }, [])
     
     const navLinks = [
+        { href: '/', label: 'Home' },
+        { href: '/about', label: 'About' },
+    ];
+    
+    const mobileNavLinks = [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
         { href: '/tools', label: 'Tools' },
@@ -40,11 +125,45 @@ export const HeroHeader = () => {
                     </div>
                     
                     <div className="hidden lg:flex items-center gap-6">
-                        {navLinks.map(link => (
-                            <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
-                                {link.label}
-                            </Link>
-                        ))}
+                       <NavigationMenu>
+                          <NavigationMenuList>
+                             <NavigationMenuItem>
+                                <Link href="/" legacyBehavior passHref>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        Home
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <Link href="/about" legacyBehavior passHref>
+                                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                        About
+                                    </NavigationMenuLink>
+                                </Link>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                              <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                                  {allTools.map((component) => (
+                                    <ListItem
+                                      key={component.title}
+                                      title={component.title}
+                                      href={component.href}
+                                    >
+                                      {component.description}
+                                    </ListItem>
+                                  ))}
+                                </ul>
+                                <div className="p-4 bg-muted/50">
+                                    <Link href="/tools" className="font-semibold text-primary hover:underline">
+                                        View all tools...
+                                    </Link>
+                                </div>
+                              </NavigationMenuContent>
+                            </NavigationMenuItem>
+                          </NavigationMenuList>
+                        </NavigationMenu>
                     </div>
 
                     <div className="hidden lg:flex items-center gap-4">
@@ -62,7 +181,7 @@ export const HeroHeader = () => {
                             </Button>
                           </SheetTrigger>
                           <SheetContent side="right">
-                            <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                             <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                             <div className="flex flex-col p-4 space-y-2">
                                 <div className='pb-4'>
                                      <Link
@@ -72,7 +191,7 @@ export const HeroHeader = () => {
                                         <Logo />
                                     </Link>
                                 </div>
-                                {navLinks.map(link => (
+                                {mobileNavLinks.map(link => (
                                     <Link key={link.href} href={link.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
                                         {link.label}
                                     </Link>
