@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -41,11 +41,17 @@ const tools = [
     href: '/tools/offline-walk-in-lead-sheet-generator',
     icon: <IconPrinter />,
   },
+  {
+    title: 'Landing Page Headline Generator',
+    description: 'Generates effective one-line headlines for coaching landing pages.',
+    href: '/tools/landing-page-headline-generator',
+    icon: <IconTypography />,
+  },
 ];
 
 export default function ToolsPage() {
   return (
-    <div className="flex flex-col items-center">
+    <>
       <section className="py-24 lg:py-32 text-center w-full">
         <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
           50+ Free Tools Built for Coaching Institutes
@@ -70,6 +76,6 @@ export default function ToolsPage() {
       <div className="w-full">
         <ToolsGrid tools={tools} />
       </div>
-    </div>
+    </>
   );
 }
