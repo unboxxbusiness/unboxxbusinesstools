@@ -56,6 +56,7 @@ export default function HeroSection() {
                         alt="app screen"
                         width="2700"
                         height="1440"
+                        priority
                         data-ai-hint="dashboard"
                     />
                 </div>

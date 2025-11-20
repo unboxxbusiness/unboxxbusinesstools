@@ -110,7 +110,7 @@ export default function Hero() {
                                 </Link>
                             </Button>
                             <Button variant="outline" asChild>
-                                <Link href="#book-demo">
+                                <Link href="/book-demo#book-demo">
                                     <MessageSquare className="mr-2 h-5 w-5" />
                                     Chat on WhatsApp
                                 </Link>

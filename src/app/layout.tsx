@@ -17,12 +17,13 @@ const siteConfig = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  metadataBase: new URL(siteConfig.url),
+  keywords: ["coaching institute tools", "lead handling", "admission automation", "education marketing", "lead leakage calculator", "follow-up templates"],
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -48,6 +49,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
