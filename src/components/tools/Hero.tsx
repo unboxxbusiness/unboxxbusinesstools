@@ -25,7 +25,7 @@ const transitionVariants = {
     },
 }
 
-export default function Hero() {
+export default function Hero({ toolCount }: { toolCount: number }) {
     return (
         <>
             <HeroHeader />
@@ -39,7 +39,7 @@ export default function Hero() {
                                 speedSegment={0.3}
                                 as="h1"
                                 className="text-balance text-5xl font-medium md:text-6xl">
-                                50+ Free Tools Built for Coaching Institutes
+                                {toolCount}+ Free Tools Built for Coaching Institutes
                             </TextEffect>
                             <TextEffect
                                 per="line"

@@ -296,7 +296,7 @@ export default function ToolsPage() {
 
   return (
     <>
-      <Hero />
+      <Hero toolCount={allTools.length} />
       <main className="container py-12">
         <div className="mx-auto max-w-md mb-16">
             <BackgroundGradient containerClassName="rounded-full" className="bg-background rounded-full">
