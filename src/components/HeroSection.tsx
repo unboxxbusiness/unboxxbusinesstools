@@ -97,7 +97,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     as="h1"
                                     className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]">
-                                    Free tools that fix your lead handling and increase admissions.
+                                    Free tools to fix lead handling and boost admissions.
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
