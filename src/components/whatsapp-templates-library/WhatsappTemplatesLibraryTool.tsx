@@ -109,7 +109,7 @@ const announcementTools = [
 
 export default function WhatsappTemplatesLibraryTool() {
   return (
-    <>
+    <div className="container">
         <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
               🗓️ Follow-Up & Nurturing Templates
@@ -137,6 +137,6 @@ export default function WhatsappTemplatesLibraryTool() {
             </h2>
             <ToolsGrid tools={announcementTools} />
         </div>
-    </>
+    </div>
   );
 }
