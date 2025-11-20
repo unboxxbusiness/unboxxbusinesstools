@@ -15,9 +15,10 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
   } from "@/components/ui/navigation-menu"
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp, IconSearch } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconTimeline, IconCalendarMonth, IconBrandWhatsapp } from '@tabler/icons-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from './ui/accordion'
 
-const leadCaptureTools = [
+const topTools = [
   {
     title: 'Lead Leakage Calculator',
     description: 'Shows lost inquiries & revenue.',
@@ -36,9 +37,6 @@ const leadCaptureTools = [
     href: '/tools/lead-source-tracker',
     icon: <IconChartPie />,
   },
-];
-
-const communicationTools = [
   {
     title: 'WhatsApp Templates Library',
     description: '100+ templates for follow-ups, fees, demos, and more.',
@@ -59,7 +57,6 @@ const communicationTools = [
   },
 ];
 
-const allTools = [...leadCaptureTools, ...communicationTools];
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -99,16 +96,9 @@ export const HeroHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
     
-    const navLinks = [
-        { href: '/', label: 'Home' },
-        { href: '/about', label: 'About' },
-    ];
-    
     const mobileNavLinks = [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
-        { href: '/tools', label: 'Tools' },
-        { href: '/book-demo', label: 'Book Demo' },
     ];
 
     return (
@@ -146,7 +136,7 @@ export const HeroHeader = () => {
                               <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
                               <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                  {allTools.map((component) => (
+                                  {topTools.map((component) => (
                                     <ListItem
                                       key={component.title}
                                       title={component.title}
@@ -197,6 +187,28 @@ export const HeroHeader = () => {
                                         {link.label}
                                     </Link>
                                 ))}
+                                <Accordion type="single" collapsible>
+                                    <AccordionItem value="tools" className="border-b-0">
+                                        <AccordionTrigger className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted hover:no-underline justify-start">
+                                            Tools
+                                        </AccordionTrigger>
+                                        <AccordionContent className="pl-4">
+                                            <div className="flex flex-col space-y-1 mt-1">
+                                                {topTools.map(tool => (
+                                                    <Link key={tool.href} href={tool.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                                        {tool.title}
+                                                    </Link>
+                                                ))}
+                                                <Link href="/tools" className="px-4 py-2 text-sm font-semibold text-primary transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                                    View all tools...
+                                                </Link>
+                                            </div>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
+                                <Link href="/book-demo" className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                    Book Demo
+                                </Link>
                                  <Button asChild>
                                     <Link href="/book-demo">Book Demo</Link>
                                 </Button>
