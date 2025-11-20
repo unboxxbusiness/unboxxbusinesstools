@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart, Captions, Presentation, Users, Zap } from 'lucide-react';
+import { GlowingEffect } from './ui/glowing-effect';
 
 const categories = [
   {
@@ -51,29 +52,32 @@ export default function ToolsByCategory() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category) => (
-            <Card key={category.title} className="flex flex-col">
-              <CardHeader>
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                    {category.icon}
-                  </div>
-                  <CardTitle className="text-lg font-semibold">{category.title}</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between">
-                <div>
-                  <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
-                  <ul className="text-xs text-muted-foreground space-y-1 mb-6">
-                    {category.examples.map(ex => <li key={ex}>e.g., {ex}</li>)}
-                  </ul>
-                </div>
-                <Button asChild variant="secondary" className="w-full mt-auto">
-                  <Link href={category.href}>
-                    View Tools <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+             <Link href={category.href} key={category.title} className="relative group">
+                <GlowingEffect disabled={false} />
+                <Card className="flex flex-col h-full">
+                <CardHeader>
+                    <div className="flex items-center gap-4">
+                    <div className="p-3 bg-primary/10 rounded-lg text-primary">
+                        {category.icon}
+                    </div>
+                    <CardTitle className="text-lg font-semibold">{category.title}</CardTitle>
+                    </div>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col justify-between">
+                    <div>
+                    <p className="text-sm text-muted-foreground mb-4">{category.description}</p>
+                    <ul className="text-xs text-muted-foreground space-y-1 mb-6">
+                        {category.examples.map(ex => <li key={ex}>e.g., {ex}</li>)}
+                    </ul>
+                    </div>
+                    <Button asChild variant="secondary" className="w-full mt-auto">
+                    <div className="flex items-center">
+                        View Tools <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                    </Button>
+                </CardContent>
+                </Card>
+            </Link>
           ))}
         </div>
       </div>
