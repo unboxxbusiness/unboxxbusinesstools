@@ -19,7 +19,7 @@ export default function FinalCtaSection() {
                 <Link href="/book-demo">Book a Free AI Automation Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-                <Link href="#">
+                <Link href="/book-demo">
                     <MessageSquare className="mr-2 h-5 w-5" />
                     Chat on WhatsApp
                 </Link>

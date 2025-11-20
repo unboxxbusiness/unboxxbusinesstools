@@ -96,7 +96,7 @@ export function Footer() {
            <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <nav className="space-y-3 text-sm not-italic">
-                <Link href="#" className="flex items-center gap-2 transition-colors hover:text-primary">
+                <Link href="/book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
                     <MessageSquare className="h-4 w-4" />
                     Chat on WhatsApp
                 </Link>
