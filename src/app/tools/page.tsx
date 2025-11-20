@@ -1,6 +1,15 @@
 'use client';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
+import ToolCard from '@/components/ToolCard';
+
+const tools = [
+  {
+    title: 'Lead Leakage Calculator',
+    description: 'Shows lost inquiries & revenue.',
+    href: '/tools/lead-leakage-calculator',
+  },
+];
 
 export default function ToolsPage() {
   return (
@@ -27,6 +36,14 @@ export default function ToolsPage() {
               />
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="container pb-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {tools.map((tool) => (
+            <ToolCard key={tool.title} {...tool} />
+          ))}
         </div>
       </div>
     </div>
