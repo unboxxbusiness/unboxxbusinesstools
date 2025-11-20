@@ -6,6 +6,14 @@ import ToolsGrid from '@/components/ToolsGrid';
 import { Input } from '@/components/ui/input';
 import { allTools, toolSections } from './toolsData';
 
+function generateId(title: string) {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+}
+
 export default function ToolsPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -35,7 +43,7 @@ export default function ToolsPage() {
 
         {filteredSections.length > 0 ? (
           filteredSections.map(section => (
-            <div key={section.title} className="w-full mb-16">
+            <div key={section.title} className="w-full mb-16 scroll-mt-24" id={generateId(section.title)}>
               <h2 className="text-2xl font-bold text-center mb-6">
                 {section.title}
               </h2>

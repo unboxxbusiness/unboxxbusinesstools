@@ -4,41 +4,49 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight, BarChart, Captions, Presentation, Users, Zap } from 'lucide-react';
 import { GlowingEffect } from './ui/glowing-effect';
 
+function generateId(title: string) {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-');
+}
+
 const categories = [
   {
     title: 'Lead Capture & Qualification',
     description: 'Tools that improve how you handle new inquiries.',
     examples: ['Lead Leakage Calculator', 'Inquiry Reply Templates'],
     icon: <Zap className="h-8 w-8" />,
-    href: '/tools'
+    href: `/tools#${generateId('⭐ Lead Capture & Qualification Tools')}`
   },
   {
     title: 'Follow-Up & Nurture',
     description: 'Tools to plan and structure your follow-ups.',
     examples: ['Follow-Up Sequence Generator', 'Demo Reminder Builder'],
     icon: <Presentation className="h-8 w-8" />,
-    href: '/tools'
+    href: `/tools#${generateId('📱 WhatsApp & Communication Tools')}`
   },
   {
     title: 'Admissions & Conversion',
     description: 'Tools to improve demo-to-admission conversions.',
     examples: ['Conversion Rate Analyzer', 'Fee Explanation Scripts'],
     icon: <Captions className="h-8 w-8" />,
-    href: '/tools'
+    href: `/tools#${generateId('🎯 Lead Conversion & Closing Tools')}`
   },
   {
     title: 'Counsellor & Team Productivity',
     description: 'Tools for daily planning and SOPs for your team.',
     examples: ['Daily Planner', 'SOP Builder'],
     icon: <Users className="h-8 w-8" />,
-    href: '/tools'
+    href: `/tools#${generateId('⚙️ Team & Productivity Tools')}`
   },
   {
     title: 'Marketing & Ads ROI',
     description: 'Tools to calculate lead cost, ROI and campaign performance.',
     examples: ['Ad Spend ROI Calculator', 'Lead Cost Calculator'],
     icon: <BarChart className="h-8 w-8" />,
-    href: '/tools'
+    href: `/tools#${generateId('📣 Marketing & Ad Tools')}`
   }
 ];
 
