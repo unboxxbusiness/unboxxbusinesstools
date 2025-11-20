@@ -1,5 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -87,8 +88,9 @@ const Feature = ({
           {title}
         </span>
       </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10">
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10 flex items-center">
         {description}
+        <ArrowRight className="w-4 h-4 ml-2 text-gray-400 group-hover/feature:translate-x-1 transition-transform" />
       </p>
     </Link>
   );
