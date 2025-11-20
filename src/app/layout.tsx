@@ -6,6 +6,7 @@ import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { HeroHeader } from "@/components/header";
 import { Footer } from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,6 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-pt-[3.5rem]">
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+        <GoogleAnalytics />
         <HeroHeader />
         {children}
         <Footer />
