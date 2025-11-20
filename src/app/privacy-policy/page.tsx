@@ -1,18 +1,26 @@
+'use client';
+
 import { Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function PrivacyPolicyPage() {
-  const lastUpdatedDate = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const [lastUpdatedDate, setLastUpdatedDate] = useState('');
+
+  useEffect(() => {
+    setLastUpdatedDate(new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }));
+  }, []);
+
 
   return (
     <main className="container mx-auto max-w-3xl py-24 px-6">
       <div className="space-y-8">
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">⭐ PRIVACY POLICY</h1>
-          <p className="text-muted-foreground">Last Updated: {lastUpdatedDate}</p>
+          <p className="text-muted-foreground">Last Updated: {lastUpdatedDate || '...'}</p>
         </div>
         
         <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, protect, and handle your information when you use our website, tools, templates, and services.</p>

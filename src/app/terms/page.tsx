@@ -1,18 +1,25 @@
+'use client';
+
 import { Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function TermsPage() {
-  const lastUpdatedDate = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
+  const [lastUpdatedDate, setLastUpdatedDate] = useState('');
+
+  useEffect(() => {
+    setLastUpdatedDate(new Date().toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    }));
+  }, []);
 
   return (
     <main className="container mx-auto max-w-3xl py-24 px-6">
       <div className="space-y-8">
         <div className="text-center space-y-2">
           <h1 className="text-4xl font-bold tracking-tight">⭐ TERMS OF USE</h1>
-          <p className="text-muted-foreground">Last Updated: {lastUpdatedDate}</p>
+          <p className="text-muted-foreground">Last Updated: {lastUpdatedDate || '...'}</p>
         </div>
         
         <p>Welcome to our website. By accessing or using this platform, you agree to the following Terms of Use. If you do not agree, please do not use the website or any of its tools, templates, or resources.</p>

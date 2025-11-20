@@ -7,6 +7,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { HeroHeader } from "@/components/header";
 import { Footer } from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: "Unboxx Business | Free Tools & AI for Coaching Institutes",
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | Unboxx Business`,
   },
   description: siteConfig.description,
   keywords: ["coaching institute tools", "lead handling", "admission automation", "education marketing", "lead leakage calculator", "follow-up templates"],
@@ -60,7 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-pt-[3.5rem]">
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
-        <GoogleAnalytics />
+        <Suspense>
+          <GoogleAnalytics />
+        </Suspense>
         <HeroHeader />
         {children}
         <Footer />
