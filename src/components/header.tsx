@@ -61,7 +61,7 @@ export const HeroHeader = () => {
                               <span className="sr-only">Open Menu</span>
                             </Button>
                           </SheetTrigger>
-                          <SheetContent side="left">
+                          <SheetContent side="right">
                             <div className="flex flex-col p-4 space-y-2">
                                 <div className='pb-4'>
                                      <Link
