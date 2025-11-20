@@ -1,11 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Input } from '@/components/ui/input';
-import { Search } from 'lucide-react';
-import ToolsGrid from '@/components/ToolsGrid';
 import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
-import { BackgroundGradient } from '@/components/ui/background-gradient';
+import ToolsGrid from '@/components/ToolsGrid';
 
 const leadCaptureTools = [
   {
@@ -274,98 +271,53 @@ const productivityTools = [
 const allTools = [...leadCaptureTools, ...communicationTools, ...leadConversionTools, ...marketingTools, ...analysisTools, ...productivityTools];
 
 export default function ToolsPage() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filteredTools, setFilteredTools] = useState(allTools);
-
-  useEffect(() => {
-    if (!allTools) return;
-    const lowercasedQuery = searchQuery.toLowerCase();
-    const filtered = allTools.filter(tool => 
-      tool.title.toLowerCase().includes(lowercasedQuery) || 
-      tool.description.toLowerCase().includes(lowercasedQuery)
-    );
-    setFilteredTools(filtered);
-  }, [searchQuery]);
-
-  const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
-  const displayedCommunicationTools = filteredTools.filter(tool => communicationTools.includes(tool));
-  const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
-  const displayedMarketingTools = filteredTools.filter(tool => marketingTools.includes(tool));
-  const displayedAnalysisTools = filteredTools.filter(tool => analysisTools.includes(tool));
-  const displayedProductivityTools = filteredTools.filter(tool => productivityTools.includes(tool));
-
+  
   return (
     <>
       <Hero toolCount={allTools.length} />
       <main className="container py-12">
-        <div className="mx-auto max-w-md mb-16">
-            <BackgroundGradient containerClassName="rounded-full" className="bg-background rounded-full">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search for a tool..."
-                  className="pl-11 h-14 w-full text-base bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-            </BackgroundGradient>
-          </div>
+        
+        <div className="w-full mb-16">
+          <h2 className="text-2xl font-bold text-center">
+            ⭐ Lead Capture &amp; Qualification Tools
+          </h2>
+          <ToolsGrid tools={leadCaptureTools} />
+        </div>
 
-        {displayedCaptureTools.length > 0 && (
-          <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center">
-              ⭐ Lead Capture &amp; Qualification Tools
-            </h2>
-            <ToolsGrid tools={displayedCaptureTools} />
-          </div>
-        )}
+        <div className="w-full mb-16">
+          <h2 className="text-2xl font-bold text-center">
+            📱 WhatsApp &amp; Communication Tools
+          </h2>
+          <ToolsGrid tools={communicationTools} />
+        </div>
 
-        {displayedCommunicationTools.length > 0 && (
-          <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center">
-              📱 WhatsApp &amp; Communication Tools
-            </h2>
-            <ToolsGrid tools={displayedCommunicationTools} />
-          </div>
-        )}
+        <div className="w-full mb-16">
+          <h2 className="text-2xl font-bold text-center">
+            🎯 Lead Conversion &amp; Closing Tools
+          </h2>
+          <ToolsGrid tools={leadConversionTools} />
+        </div>
 
-        {displayedConversionTools.length > 0 && (
-          <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center">
-              🎯 Lead Conversion &amp; Closing Tools
-            </h2>
-            <ToolsGrid tools={displayedConversionTools} />
-          </div>
-        )}
+        <div className="w-full mb-16">
+          <h2 className="text-2xl font-bold text-center">
+            📣 Marketing &amp; Ad Tools
+          </h2>
+          <ToolsGrid tools={marketingTools} />
+        </div>
 
-        {displayedMarketingTools.length > 0 && (
-          <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center">
-              📣 Marketing &amp; Ad Tools
-            </h2>
-            <ToolsGrid tools={displayedMarketingTools} />
-          </div>
-        )}
-
-        {displayedAnalysisTools.length > 0 && (
-          <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center">
-              📊 Conversion Rate &amp; Funnel Analysis
-            </h2>
-            <ToolsGrid tools={displayedAnalysisTools} />
-          </div>
-        )}
-
-        {displayedProductivityTools.length > 0 && (
-          <div className="w-full">
-            <h2 className="text-2xl font-bold text-center">
-              ⚙️ Team &amp; Productivity Tools
-            </h2>
-            <ToolsGrid tools={displayedProductivityTools} />
-          </div>
-        )}
+        <div className="w-full mb-16">
+          <h2 className="text-2xl font-bold text-center">
+            📊 Conversion Rate &amp; Funnel Analysis
+          </h2>
+          <ToolsGrid tools={analysisTools} />
+        </div>
+        
+        <div className="w-full">
+          <h2 className="text-2xl font-bold text-center">
+            ⚙️ Team &amp; Productivity Tools
+          </h2>
+          <ToolsGrid tools={productivityTools} />
+        </div>
       </main>
     </>
   );
