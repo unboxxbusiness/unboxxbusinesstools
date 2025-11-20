@@ -311,7 +311,7 @@ export default function ToolsPage() {
         {filteredSections.length > 0 ? (
           filteredSections.map(section => (
             <div key={section.title} className="w-full mb-16">
-              <h2 className="text-2xl font-bold text-center">
+              <h2 className="text-2xl font-bold text-center mb-6">
                 {section.title}
               </h2>
               <ToolsGrid tools={section.tools} />

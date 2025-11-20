@@ -15,9 +15,9 @@ interface ToolsGridProps {
 
 export default function ToolsGrid({ tools }: ToolsGridProps) {
   return (
-    <div className="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-      {tools.map((tool) => (
-        <ToolCard key={tool.title} {...tool} />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto border-t border-l">
+      {tools.map((tool, index) => (
+        <ToolCard key={tool.title} {...tool} index={index} />
       ))}
     </div>
   );
