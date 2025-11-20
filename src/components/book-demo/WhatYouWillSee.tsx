@@ -23,16 +23,6 @@ const features = [
         name: "Performance Dashboard",
         description: "Get a look at the central dashboard to track all your leads and metrics."
     },
-     {
-        icon: <Bot />,
-        name: "AI-Powered Conversations",
-        description: "Experience how the AI can answer common questions about fees, timings, and course details, freeing up your counselors."
-    },
-    {
-        icon: <LineChart />,
-        name: "Performance Dashboard",
-        description: "Get a look at the central dashboard where you can track all your leads, conversations, and admission metrics in one place."
-    },
 ]
 
 export default function WhatYouWillSee() {
