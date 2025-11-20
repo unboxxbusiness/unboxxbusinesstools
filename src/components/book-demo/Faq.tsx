@@ -19,10 +19,6 @@ const faqs = [
         answer: "Just a computer with an internet connection. We'll send you a link to a video call (usually Google Meet or Zoom). No technical preparation is needed on your end."
     },
     {
-        question: "Is this a pre-recorded demo or a live call?",
-        answer: "It's a live, one-on-one call with one of our automation experts. This allows us to tailor the demo to your institute's specific needs and answer your unique questions."
-    },
-    {
         question: "What happens after the demo?",
         answer: "After the demo, we'll send you a summary and a proposal. There's no pressure to buy. You can take your time to decide if it's the right fit for you."
     }
