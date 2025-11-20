@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -224,9 +224,18 @@ const analysisTools = [
     href: '/tools/ad-spend-roi-calculator',
     icon: <IconReceiptRefund />,
   }
-]
+];
 
-const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...marketingTools, ...analysisTools];
+const productivityTools = [
+  {
+    title: 'Counsellor Workload Calculator',
+    description: 'Calculates daily hours spent handling leads and shows overload areas.',
+    href: '/tools/counsellor-workload-calculator',
+    icon: <IconUsers />,
+  },
+];
+
+const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...marketingTools, ...analysisTools, ...productivityTools];
 
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -247,6 +256,7 @@ export default function ToolsPage() {
   const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
   const displayedMarketingTools = filteredTools.filter(tool => marketingTools.includes(tool));
   const displayedAnalysisTools = filteredTools.filter(tool => analysisTools.includes(tool));
+  const displayedProductivityTools = filteredTools.filter(tool => productivityTools.includes(tool));
 
   return (
     <>
@@ -304,11 +314,20 @@ export default function ToolsPage() {
         )}
 
         {displayedAnalysisTools.length > 0 && (
-          <div className="w-full">
+          <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
               📊 Conversion Rate &amp; Funnel Analysis
             </h2>
             <ToolsGrid tools={displayedAnalysisTools} />
+          </div>
+        )}
+
+        {displayedProductivityTools.length > 0 && (
+          <div className="w-full">
+            <h2 className="text-2xl font-bold text-center">
+              ⚙️ Team &amp; Productivity Tools
+            </h2>
+            <ToolsGrid tools={displayedProductivityTools} />
           </div>
         )}
       </main>
