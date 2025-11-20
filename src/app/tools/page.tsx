@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneMissed } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -55,6 +55,12 @@ const leadCaptureTools = [
     description: 'Helps classify leads as Hot, Warm, or Cold based on key criteria.',
     href: '/tools/inquiry-qualification-checklist-tool',
     icon: <IconListCheck />,
+  },
+  {
+    title: 'Missed-Call Follow-Up Message Generator',
+    description: 'Generates professional templates for returning missed calls.',
+    href: '/tools/missed-call-follow-up-message-generator',
+    icon: <IconPhoneMissed />,
   }
 ];
 
