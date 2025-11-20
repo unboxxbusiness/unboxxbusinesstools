@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -106,6 +106,12 @@ const leadNurturingTools = [
     description: 'Templates for students who missed a registered demo.',
     href: '/tools/absentee-follow-up-script-generator',
     icon: <IconUserOff />,
+  },
+  {
+    title: 'Voice Note Follow-Up Script Generator',
+    description: 'Short, personal scripts for voice notes to boost response rates.',
+    href: '/tools/voice-note-follow-up-script-generator',
+    icon: <IconMicrophone />,
   },
 ];
 
