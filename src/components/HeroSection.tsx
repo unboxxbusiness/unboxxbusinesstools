@@ -40,7 +40,7 @@ export default function HeroSection() {
                             asChild
                             size="lg"
                             variant="ghost">
-                            <Link href="#link">
+                            <Link href="/book-demo">
                                 Book Demo
                             </Link>
                         </Button>

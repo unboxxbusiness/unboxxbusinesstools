@@ -88,7 +88,7 @@ export function Footer() {
               <Link href="/tools" className="block transition-colors hover:text-primary">
                 Tools
               </Link>
-              <Link href="#" className="block transition-colors hover:text-primary">
+              <Link href="/book-demo" className="block transition-colors hover:text-primary">
                 Book Demo
               </Link>
             </nav>
@@ -108,7 +108,7 @@ export function Footer() {
               Turn these tools into a 24/7 AI system that captures, nurtures, and converts leads for you.
             </p>
             <Button asChild>
-                <Link href="#">Book a Free AI Demo</Link>
+                <Link href="/book-demo">Book a Free AI Demo</Link>
             </Button>
           </div>
         </div>

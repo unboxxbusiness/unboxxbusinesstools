@@ -40,7 +40,7 @@ export default function HowItWorks() {
 
         <div className="text-center space-y-2">
             <Button asChild size="lg">
-                <Link href="#">Book a Free Automation Demo</Link>
+                <Link href="/book-demo">Book a Free Automation Demo</Link>
             </Button>
             <p className="text-sm text-muted-foreground">See how these tools become a 24/7 admissions system.</p>
         </div>

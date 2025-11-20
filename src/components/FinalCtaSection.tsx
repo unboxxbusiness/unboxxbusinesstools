@@ -16,7 +16,7 @@ export default function FinalCtaSection() {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
-                <Link href="#">Book a Free AI Automation Demo</Link>
+                <Link href="/book-demo">Book a Free AI Automation Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
                 <Link href="#">

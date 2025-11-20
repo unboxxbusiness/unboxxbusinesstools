@@ -22,6 +22,7 @@ export const HeroHeader = () => {
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
         { href: '/tools', label: 'Tools' },
+        { href: '/book-demo', label: 'Book Demo' },
     ];
 
     return (
@@ -49,7 +50,7 @@ export const HeroHeader = () => {
 
                     <div className="hidden lg:flex items-center gap-4">
                         <Button asChild size="sm">
-                            <Link href="#">Book Demo</Link>
+                            <Link href="/book-demo">Book Demo</Link>
                         </Button>
                     </div>
 
@@ -70,7 +71,7 @@ export const HeroHeader = () => {
                                 </Link>
                             ))}
                              <Button asChild>
-                                <Link href="#">Book Demo</Link>
+                                <Link href="/book-demo">Book Demo</Link>
                             </Button>
                          </div>
                     </div>
