@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 
 const leadCaptureTools = [
@@ -69,6 +69,12 @@ const leadNurturingTools = [
     description: 'Creates a month-long engagement plan for undecided leads.',
     href: '/tools/30-day-nurture-calendar-generator',
     icon: <IconCalendarMonth />,
+  },
+    {
+    title: 'Demo Reminder Message Builder',
+    description: 'Creates 24-hour, 1-hour, and last-minute demo reminders.',
+    href: '/tools/demo-reminder-message-builder',
+    icon: <IconBellRinging />,
   }
 ];
 
@@ -79,13 +85,14 @@ export default function ToolsPage() {
   const [filteredTools, setFilteredTools] = useState(allTools);
 
   useEffect(() => {
+    if (!allTools) return;
     const lowercasedQuery = searchQuery.toLowerCase();
     const filtered = allTools.filter(tool => 
       tool.title.toLowerCase().includes(lowercasedQuery) || 
       tool.description.toLowerCase().includes(lowercasedQuery)
     );
     setFilteredTools(filtered);
-  }, [searchQuery, allTools]);
+  }, [searchQuery]);
 
   const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
   const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
