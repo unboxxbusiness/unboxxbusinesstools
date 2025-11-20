@@ -6,7 +6,7 @@ import HowToUse from '@/components/lead-leakage-calculator/HowToUse';
 
 export default function LeadLeakageCalculatorPage() {
   return (
-    <main className="container py-12">
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Lead Leakage Calculator</h1>
@@ -18,6 +18,6 @@ export default function LeadLeakageCalculatorPage() {
       <Calculator />
 
       <HowToUse />
-    </main>
+    </div>
   );
 }

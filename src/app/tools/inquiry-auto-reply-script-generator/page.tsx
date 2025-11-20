@@ -67,7 +67,7 @@ export default function InquiryAutoReplyScriptGeneratorPage() {
 
   const handleGenerate = () => {
     if (courseName && questionType) {
-      const template = templates[questionType];
+      const template = templates[questionType as keyof typeof templates];
       const script = template.replace(/{courseName}/g, courseName.trim());
       setGeneratedScript(script);
     }
@@ -94,8 +94,7 @@ export default function InquiryAutoReplyScriptGeneratorPage() {
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
         {/* Generator UI */}
         <Card className="shadow-none border-0">
-          <CardContent className="p-0">
-            <div className="space-y-6">
+          <CardContent className="p-0 space-y-6">
               <div className="space-y-2">
                 <Label htmlFor="course-name">Course Name</Label>
                 <Input
@@ -123,7 +122,6 @@ export default function InquiryAutoReplyScriptGeneratorPage() {
               <Button onClick={handleGenerate} className="w-full" disabled={!courseName || !questionType}>
                 Generate Script
               </Button>
-            </div>
           </CardContent>
         </Card>
 

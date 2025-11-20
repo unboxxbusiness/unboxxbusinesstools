@@ -27,7 +27,7 @@ const tools = [
 
 export default function ToolsPage() {
   return (
-    <div className="bg-gray-50/90 dark:bg-neutral-900">
+    <>
       <section className="py-24 lg:py-32">
         <div className="container text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
@@ -54,6 +54,6 @@ export default function ToolsPage() {
       <div className="container pb-24">
         <ToolsGrid tools={tools} />
       </div>
-    </div>
+    </>
   );
 }
