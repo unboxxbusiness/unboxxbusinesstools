@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -88,6 +88,12 @@ const leadNurturingTools = [
     description: 'Creates short, polite nudges to check student interest.',
     href: '/tools/still-interested-message-builder',
     icon: <IconMessageQuestion />,
+  },
+  {
+    title: 'Absentee Follow-Up Script Generator',
+    description: 'Templates for students who missed a registered demo.',
+    href: '/tools/absentee-follow-up-script-generator',
+    icon: <IconUserOff />,
   },
 ];
 
