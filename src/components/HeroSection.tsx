@@ -52,7 +52,7 @@ export default function HeroSection() {
                 <div className="relative mx-auto max-w-6xl overflow-hidden rounded-xl border bg-background shadow-lg">
                     <Image
                         className="w-full"
-                        src="https://picsum.photos/seed/mail2-light/2700/1440"
+                        src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763657539/demo_cei0ua.png"
                         alt="app screen"
                         width="2700"
                         height="1440"
