@@ -96,11 +96,11 @@ export function Footer() {
            <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <nav className="space-y-3 text-sm not-italic">
-                <Link href="/book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
+                <Link href="/book-demo#book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
                     <MessageSquare className="h-4 w-4" />
                     Chat on WhatsApp
                 </Link>
-                <Link href="/book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
+                <Link href="/book-demo#book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
                     <CalendarCheck className="h-4 w-4" />
                     Book a Free Demo
                 </Link>
@@ -112,7 +112,7 @@ export function Footer() {
               Turn these tools into a 24/7 AI system that captures, nurtures, and converts leads for you.
             </p>
             <Button asChild>
-                <Link href="/book-demo">Book a Free AI Demo</Link>
+                <Link href="/book-demo#book-demo">Book a Free AI Demo</Link>
             </Button>
           </div>
         </div>

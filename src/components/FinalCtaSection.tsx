@@ -16,10 +16,10 @@ export default function FinalCtaSection() {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg">
-                <Link href="/book-demo">Book a Free AI Automation Demo</Link>
+                <Link href="/book-demo#book-demo">Book a Free AI Automation Demo</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-                <Link href="/book-demo">
+                <Link href="/book-demo#book-demo">
                     <MessageSquare className="mr-2 h-5 w-5" />
                     Chat on WhatsApp
                 </Link>
