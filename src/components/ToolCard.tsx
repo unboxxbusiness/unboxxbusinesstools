@@ -1,29 +1,30 @@
 'use client';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { BackgroundGradient } from './ui/background-gradient';
+import React from 'react';
+import { GlowingEffect } from './ui/glowing-effect';
 
 interface ToolCardProps {
   title: string;
   description: string;
   href: string;
+  icon: React.ReactNode;
 }
 
-export default function ToolCard({ title, description, href }: ToolCardProps) {
+export default function ToolCard({ title, description, href, icon }: ToolCardProps) {
   return (
-    <Link href={href} className="group">
-      <BackgroundGradient
-        containerClassName="rounded-xl h-full"
-        className="h-full rounded-xl bg-card text-card-foreground shadow-sm p-6"
-      >
-        <div className="flex flex-col space-y-1.5 h-full">
-          <h3 className="text-xl font-semibold leading-none tracking-tight flex items-center justify-between">
-            {title}
-            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform" />
-          </h3>
-          <p className="text-sm text-muted-foreground pt-2">{description}</p>
-        </div>
-      </BackgroundGradient>
+    <Link
+      href={href}
+      className="group relative flex flex-col rounded-xl border bg-card p-6 text-card-foreground shadow-sm transition-shadow duration-300 hover:shadow-lg"
+    >
+      <GlowingEffect disabled={false} />
+      <div className="mb-4 text-primary">{React.cloneElement(icon as React.ReactElement, { className: 'h-6 w-6' })}</div>
+      <h3 className="text-lg font-semibold leading-none tracking-tight">{title}</h3>
+      <p className="mt-2 flex-grow text-sm text-muted-foreground">{description}</p>
+      <div className="mt-4 flex items-center text-sm font-semibold text-primary">
+        Use Tool
+        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </div>
     </Link>
   );
 }
