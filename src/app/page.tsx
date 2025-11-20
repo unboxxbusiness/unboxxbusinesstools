@@ -1,3 +1,4 @@
+import BenefitsSection from "@/components/BenefitsSection";
 import Features from "@/components/Features";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
@@ -12,6 +13,7 @@ export default function Home() {
       <ToolsShowcase />
       <HowItWorks />
       <ToolsByCategory />
+      <BenefitsSection />
     </>
   );
 }
