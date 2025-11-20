@@ -5,6 +5,7 @@ import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
 import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
+import { BackgroundGradient } from '@/components/ui/background-gradient';
 
 const leadCaptureTools = [
   {
@@ -107,17 +108,19 @@ export default function ToolsPage() {
     <>
       <Hero />
       <main className="container py-12">
-        <div className="mx-auto max-w-md mb-12">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search for a tool..."
-                className="pl-10 h-12 text-base"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
+        <div className="mx-auto max-w-md mb-16">
+            <BackgroundGradient containerClassName="rounded-full" className="bg-background rounded-full">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder="Search for a tool..."
+                  className="pl-11 h-14 w-full text-base bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+            </BackgroundGradient>
           </div>
 
         {displayedCaptureTools.length > 0 && (

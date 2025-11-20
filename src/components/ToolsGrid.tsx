@@ -37,7 +37,7 @@ export default function ToolsGrid({ tools }: ToolsGridProps) {
 
 
   return (
-    <div className={`${gridClass} relative z-10 py-10 ${maxWidthClass} mx-auto`}>
+    <div className={`${gridClass} relative z-10 pt-10 ${maxWidthClass} mx-auto`}>
       {tools.map((tool, index) => (
         <Feature key={tool.title} {...tool} index={index} total={tools.length} />
       ))}
