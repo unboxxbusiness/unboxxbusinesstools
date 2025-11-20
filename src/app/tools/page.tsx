@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -212,6 +212,12 @@ const analysisTools = [
     href: '/tools/conversion-rate-analyzer',
     icon: <IconAnalyze />,
   },
+  {
+    title: 'Lead Cost Calculator',
+    description: 'Calculates your Cost Per Lead (CPL) and Cost Per Admission (CPA).',
+    href: '/tools/lead-cost-calculator',
+    icon: <IconReportAnalytics />,
+  }
 ]
 
 const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...marketingTools, ...analysisTools];
