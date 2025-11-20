@@ -122,7 +122,7 @@ export default function ToolsPage() {
 
         {displayedCaptureTools.length > 0 && (
           <div className="w-full mb-16">
-            <h2 className="text-2xl font-bold text-center mb-4">
+            <h2 className="text-2xl font-bold text-center">
               ⭐ Lead Capture & Qualification Tools
             </h2>
             <ToolsGrid tools={displayedCaptureTools} />
@@ -131,7 +131,7 @@ export default function ToolsPage() {
 
         {displayedNurturingTools.length > 0 && (
           <div className="w-full">
-            <h2 className="text-2xl font-bold text-center mb-4">
+            <h2 className="text-2xl font-bold text-center">
               🌱 Lead Nurturing & Follow-Up Tools
             </h2>
             <ToolsGrid tools={displayedNurturingTools} />
