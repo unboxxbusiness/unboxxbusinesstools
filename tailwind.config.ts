@@ -9,6 +9,19 @@ export default {
   ],
   theme: {
     extend: {
+      fontSize: {
+        'h1': 'var(--font-h1)',
+        'h2': 'var(--font-h2)',
+        'h3': 'var(--font-h3)',
+        'h4': 'var(--font-h4)',
+        'h5': 'var(--font-h5)',
+        'h6': 'var(--font-h6)',
+        'body': 'var(--font-body)',
+        'body-lg': 'var(--font-body-lg)',
+        'body-sm': 'var(--font-body-sm)',
+        'caption': 'var(--font-caption)',
+        'ui': 'var(--font-ui)',
+      },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Inter', 'sans-serif'],

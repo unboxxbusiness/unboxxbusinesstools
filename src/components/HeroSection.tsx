@@ -93,22 +93,13 @@ export default function HeroSection() {
                                     </div>
                                 </AnimatedGroup>
 
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-16">
+                                <h1 className="text-h1 mx-auto mt-8 max-w-4xl text-balance lg:mt-16">
                                     Free tools to fix lead handling and boost admissions.
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+                                </h1>
+                                
+                                <p className="text-body-lg mx-auto mt-8 max-w-2xl text-balance">
                                     Use simple calculators and templates to fix your lead handling — then automate it with AI.
-                                </TextEffect>
+                                </p>
 
                                 <AnimatedGroup
                                     variants={{
