@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -124,7 +124,16 @@ const leadConversionTools = [
   },
 ];
 
-const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools];
+const analysisTools = [
+    {
+    title: 'Conversion Rate Analyzer',
+    description: 'Calculates key conversion rates to identify funnel bottlenecks.',
+    href: '/tools/conversion-rate-analyzer',
+    icon: <IconAnalyze />,
+  },
+]
+
+const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...analysisTools];
 
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -143,6 +152,7 @@ export default function ToolsPage() {
   const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
   const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
   const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
+  const displayedAnalysisTools = filteredTools.filter(tool => analysisTools.includes(tool));
 
   return (
     <>
@@ -182,11 +192,20 @@ export default function ToolsPage() {
         )}
 
         {displayedConversionTools.length > 0 && (
-          <div className="w-full">
+          <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
               🎯 Lead Conversion &amp; Closing Tools
             </h2>
             <ToolsGrid tools={displayedConversionTools} />
+          </div>
+        )}
+
+        {displayedAnalysisTools.length > 0 && (
+          <div className="w-full">
+            <h2 className="text-2xl font-bold text-center">
+              📊 Conversion Rate &amp; Funnel Analysis
+            </h2>
+            <ToolsGrid tools={displayedAnalysisTools} />
           </div>
         )}
       </main>
