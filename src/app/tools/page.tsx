@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 
-const tools = [
+const leadCaptureTools = [
   {
     title: 'Lead Leakage Calculator',
     description: 'Shows lost inquiries & revenue.',
@@ -58,18 +58,32 @@ const tools = [
   }
 ];
 
+const leadNurturingTools = [
+  {
+    title: '7-Day Follow-Up Sequence Generator',
+    description: 'Generates a 7-day WhatsApp follow-up plan to nurture new leads.',
+    href: '/tools/7-day-follow-up-sequence-generator',
+    icon: <IconTimeline />,
+  }
+];
+
+const allTools = [...leadCaptureTools, ...leadNurturingTools];
+
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredTools, setFilteredTools] = useState(tools);
+  const [filteredTools, setFilteredTools] = useState(allTools);
 
   useEffect(() => {
     const lowercasedQuery = searchQuery.toLowerCase();
-    const filtered = tools.filter(tool => 
+    const filtered = allTools.filter(tool => 
       tool.title.toLowerCase().includes(lowercasedQuery) || 
       tool.description.toLowerCase().includes(lowercasedQuery)
     );
     setFilteredTools(filtered);
-  }, [searchQuery]);
+  }, [searchQuery, allTools]);
+
+  const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
+  const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
 
   return (
     <>
@@ -88,12 +102,23 @@ export default function ToolsPage() {
             </div>
           </div>
 
-        <div className="w-full">
-          <h2 className="text-2xl font-bold text-center mb-4">
-            ⭐ Lead Capture & Qualification Tools
-          </h2>
-          <ToolsGrid tools={filteredTools} />
-        </div>
+        {displayedCaptureTools.length > 0 && (
+          <div className="w-full mb-16">
+            <h2 className="text-2xl font-bold text-center mb-4">
+              ⭐ Lead Capture & Qualification Tools
+            </h2>
+            <ToolsGrid tools={displayedCaptureTools} />
+          </div>
+        )}
+
+        {displayedNurturingTools.length > 0 && (
+          <div className="w-full">
+            <h2 className="text-2xl font-bold text-center mb-4">
+              🌱 Lead Nurturing & Follow-Up Tools
+            </h2>
+            <ToolsGrid tools={displayedNurturingTools} />
+          </div>
+        )}
       </main>
     </>
   );
