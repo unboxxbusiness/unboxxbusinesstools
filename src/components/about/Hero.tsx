@@ -34,7 +34,7 @@ export default function Hero() {
                     <div className="relative mt-6 sm:mt-0">
                         <div className="bg-linear-to-b aspect-67/34 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
                              <Image 
-                                src="https://picsum.photos/seed/dark-about/1206/612" 
+                                src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658202/Gemini_Generated_Image_bx7bybbx7bybbx7b_x1rdjs.png" 
                                 className="hidden rounded-[15px] dark:block" 
                                 alt="illustration dark" 
                                 width={1206} 
@@ -42,7 +42,7 @@ export default function Hero() {
                                 data-ai-hint="abstract dark"
                              />
                              <Image 
-                                src="https://picsum.photos/seed/light-about/1206/612" 
+                                src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658202/Gemini_Generated_Image_bx7bybbx7bybbx7b_x1rdjs.png" 
                                 className="rounded-[15px] shadow dark:hidden" 
                                 alt="illustration light" 
                                 width={1206} 
