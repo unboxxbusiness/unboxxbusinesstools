@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -82,7 +82,13 @@ const leadNurturingTools = [
     description: 'Generates messages for cold leads who stopped responding.',
     href: '/tools/lead-revival-template-generator',
     icon: <IconRecycle />,
-  }
+  },
+  {
+    title: '"Still Interested?" Message Builder',
+    description: 'Creates short, polite nudges to check student interest.',
+    href: '/tools/still-interested-message-builder',
+    icon: <IconMessageQuestion />,
+  },
 ];
 
 const allTools = [...leadCaptureTools, ...leadNurturingTools];
