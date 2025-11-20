@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp } from '@tabler/icons-react';
+import { useState } from 'react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp, IconSearch } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import ToolsGrid from '@/components/ToolsGrid';
+import { Input } from '@/components/ui/input';
 
 const leadCaptureTools = [
   {
@@ -270,54 +271,58 @@ const productivityTools = [
 
 const allTools = [...leadCaptureTools, ...communicationTools, ...leadConversionTools, ...marketingTools, ...analysisTools, ...productivityTools];
 
+const toolSections = [
+  { title: "⭐ Lead Capture & Qualification Tools", tools: leadCaptureTools },
+  { title: "📱 WhatsApp & Communication Tools", tools: communicationTools },
+  { title: "🎯 Lead Conversion & Closing Tools", tools: leadConversionTools },
+  { title: "📣 Marketing & Ad Tools", tools: marketingTools },
+  { title: "📊 Conversion Rate & Funnel Analysis", tools: analysisTools },
+  { title: "⚙️ Team & Productivity Tools", tools: productivityTools },
+];
+
+
 export default function ToolsPage() {
-  
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredSections = toolSections.map(section => {
+    const filteredTools = section.tools.filter(tool =>
+      tool.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    return { ...section, tools: filteredTools };
+  }).filter(section => section.tools.length > 0);
+
   return (
     <>
       <Hero toolCount={allTools.length} />
       <main className="container py-12">
         
-        <div className="w-full mb-16">
-          <h2 className="text-2xl font-bold text-center">
-            ⭐ Lead Capture &amp; Qualification Tools
-          </h2>
-          <ToolsGrid tools={leadCaptureTools} />
+        <div className="relative max-w-2xl mx-auto mb-16">
+            <IconSearch className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Input 
+                type="search"
+                placeholder="Search for a tool..."
+                className="pl-12 h-14 w-full text-base"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+            />
         </div>
 
-        <div className="w-full mb-16">
-          <h2 className="text-2xl font-bold text-center">
-            📱 WhatsApp &amp; Communication Tools
-          </h2>
-          <ToolsGrid tools={communicationTools} />
-        </div>
-
-        <div className="w-full mb-16">
-          <h2 className="text-2xl font-bold text-center">
-            🎯 Lead Conversion &amp; Closing Tools
-          </h2>
-          <ToolsGrid tools={leadConversionTools} />
-        </div>
-
-        <div className="w-full mb-16">
-          <h2 className="text-2xl font-bold text-center">
-            📣 Marketing &amp; Ad Tools
-          </h2>
-          <ToolsGrid tools={marketingTools} />
-        </div>
-
-        <div className="w-full mb-16">
-          <h2 className="text-2xl font-bold text-center">
-            📊 Conversion Rate &amp; Funnel Analysis
-          </h2>
-          <ToolsGrid tools={analysisTools} />
-        </div>
-        
-        <div className="w-full">
-          <h2 className="text-2xl font-bold text-center">
-            ⚙️ Team &amp; Productivity Tools
-          </h2>
-          <ToolsGrid tools={productivityTools} />
-        </div>
+        {filteredSections.length > 0 ? (
+          filteredSections.map(section => (
+            <div key={section.title} className="w-full mb-16">
+              <h2 className="text-2xl font-bold text-center">
+                {section.title}
+              </h2>
+              <ToolsGrid tools={section.tools} />
+            </div>
+          ))
+        ) : (
+          <div className="text-center py-16">
+            <p className="text-lg font-semibold">No tools found for "{searchTerm}"</p>
+            <p className="text-muted-foreground mt-2">Try a different search term.</p>
+          </div>
+        )}
       </main>
     </>
   );
