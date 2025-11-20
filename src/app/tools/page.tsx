@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -122,6 +122,12 @@ const leadNurturingTools = [
 ];
 
 const leadConversionTools = [
+    {
+    title: 'Course Comparison Sheet Generator',
+    description: 'Creates a side-by-side view of two courses or plans.',
+    href: '/tools/course-comparison-sheet-generator',
+    icon: <IconColumns />,
+  },
   {
     title: 'Fee Follow-Up Template Generator',
     description: 'Creates structured follow-up messages after fee explanation.',
