@@ -12,15 +12,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 const siteConfig = {
   name: "Unboxx Business",
-  url: "https://unboxxbusiness.com", // Replace with your actual domain
-  description: "Free tools to fix lead handling and boost admissions for coaching institutes.",
+  url: "https://unboxxbusiness.com",
+  description: "Free tools and AI automation to help coaching institutes fix lead handling, improve follow-ups, and boost admissions.",
 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    default: "Unboxx Business | Free Tools & AI for Coaching Institutes",
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: ["coaching institute tools", "lead handling", "admission automation", "education marketing", "lead leakage calculator", "follow-up templates"],
