@@ -129,14 +129,14 @@ export const HeroHeader = () => {
                        <NavigationMenu>
                           <NavigationMenuList>
                              <NavigationMenuItem>
-                                <Link href="/" legacyBehavior passHref>
+                                <Link href="/" passHref>
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         Home
                                     </NavigationMenuLink>
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/about" legacyBehavior passHref>
+                                <Link href="/about" passHref>
                                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                         About
                                     </NavigationMenuLink>
