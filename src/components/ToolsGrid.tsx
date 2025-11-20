@@ -24,7 +24,7 @@ export default function ToolsGrid({ tools }: ToolsGridProps) {
     3: 'lg:grid-cols-3',
     4: 'lg:grid-cols-4',
   };
-  const gridClass = `grid grid-cols-1 ${gridClasses[2]} ${gridClasses[3]} ${gridClasses[4]}`;
+  const gridClass = `grid grid-cols-1 ${gridClasses[2] || ''} ${gridClasses[3] || ''} ${gridClasses[4] || ''}`;
   
   // Calculate a sensible max width
   const maxWidths = {
