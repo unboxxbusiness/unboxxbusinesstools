@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -97,7 +97,16 @@ const leadNurturingTools = [
   },
 ];
 
-const allTools = [...leadCaptureTools, ...leadNurturingTools];
+const leadConversionTools = [
+  {
+    title: 'Fee Follow-Up Template Generator',
+    description: 'Creates structured follow-up messages after fee explanation.',
+    href: '/tools/fee-follow-up-template-generator',
+    icon: <IconCash />,
+  },
+];
+
+const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools];
 
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -115,6 +124,7 @@ export default function ToolsPage() {
 
   const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
   const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
+  const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
 
   return (
     <>
@@ -138,18 +148,27 @@ export default function ToolsPage() {
         {displayedCaptureTools.length > 0 && (
           <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
-              ⭐ Lead Capture & Qualification Tools
+              ⭐ Lead Capture &amp; Qualification Tools
             </h2>
             <ToolsGrid tools={displayedCaptureTools} />
           </div>
         )}
 
         {displayedNurturingTools.length > 0 && (
-          <div className="w-full">
+          <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
-              🌱 Lead Nurturing & Follow-Up Tools
+              🌱 Lead Nurturing &amp; Follow-Up Tools
             </h2>
             <ToolsGrid tools={displayedNurturingTools} />
+          </div>
+        )}
+
+        {displayedConversionTools.length > 0 && (
+          <div className="w-full">
+            <h2 className="text-2xl font-bold text-center">
+              🎯 Lead Conversion &amp; Closing Tools
+            </h2>
+            <ToolsGrid tools={displayedConversionTools} />
           </div>
         )}
       </main>
