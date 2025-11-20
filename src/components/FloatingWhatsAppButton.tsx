@@ -1,22 +1,18 @@
 'use client';
 
-import { IconBrandWhatsapp } from '@tabler/icons-react';
+import { CalendarCheck } from 'lucide-react';
 import Link from 'next/link';
 
-// TODO: Replace with your actual phone number
-const WHATSAPP_NUMBER = "911234567890";
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
+const BOOK_DEMO_URL = "/book-demo#book-demo";
 
 export default function FloatingWhatsAppButton() {
   return (
     <Link
-      href={WHATSAPP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="fixed bottom-6 left-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-lg transition-transform hover:scale-110"
-      aria-label="Chat on WhatsApp"
+      href={BOOK_DEMO_URL}
+      className="fixed bottom-6 left-6 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-transform hover:scale-110"
+      aria-label="Book a Demo"
     >
-      <IconBrandWhatsapp size={32} />
+      <CalendarCheck size={28} />
     </Link>
   );
 }
