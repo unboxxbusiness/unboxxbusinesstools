@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 export default function Hero() {
@@ -10,13 +10,18 @@ export default function Hero() {
                     See How AI Can Automate Your Admissions
                 </h1>
                 <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Book a free, no-obligation demo to see how our AI-powered system can capture every lead, automate follow-ups, and help you convert more students — 24/7.
+                    See how your institute can reply instantly, follow up automatically, and convert more leads into admissions — without extra staff.
                 </p>
-                <div className="mt-8">
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                     <Button size="lg" asChild>
                         <Link href="#book-demo">
-                            Schedule Your Free Demo
-                            <ArrowDown className="ml-2 h-5 w-5" />
+                            👉 Book My Free Demo
+                        </Link>
+                    </Button>
+                    <Button size="lg" variant="outline" asChild>
+                        <Link href="#">
+                             <MessageSquare className="mr-2 h-5 w-5" />
+                            Chat on WhatsApp
                         </Link>
                     </Button>
                 </div>
