@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { HeroHeader } from "@/components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+        <HeroHeader />
         {children}
         <FloatingWhatsAppButton />
         <ScrollToTopButton />

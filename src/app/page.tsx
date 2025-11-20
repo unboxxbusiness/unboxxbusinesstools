@@ -8,7 +8,7 @@ import ToolsShowcase from "@/components/ToolsShowcase";
 
 export default function Home() {
   return (
-    <>
+    <main className="flex flex-col items-center">
       <HeroSection />
       <Features />
       <ToolsShowcase />
@@ -16,6 +16,6 @@ export default function Home() {
       <ToolsByCategory />
       <BenefitsSection />
       <FinalCtaSection />
-    </>
+    </main>
   );
 }

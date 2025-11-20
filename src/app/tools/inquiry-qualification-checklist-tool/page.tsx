@@ -4,7 +4,7 @@ import InquiryChecklistTool from "@/components/inquiry-qualification-checklist-t
 
 export default function InquiryQualificationChecklistPage() {
   return (
-    <div className="w-full">
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Inquiry Qualification Checklist Tool</h1>

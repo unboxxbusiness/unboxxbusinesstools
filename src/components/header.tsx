@@ -12,46 +12,48 @@ export const HeroHeader = () => {
 
     React.useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
+            setIsScrolled(window.scrollY > 10)
         }
-        window.addEventListener('scroll', handleScroll)
+        window.addEventListener('scroll', handleScroll, { passive: true })
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+    
     return (
-        <header>
+        <header className={cn("fixed top-0 z-50 w-full transition-all duration-300", isScrolled ? "py-2" : "py-4")}>
             <nav
                 data-state={menuState ? 'active' : 'inactive'}
-                className="fixed z-20 w-full px-2">
-                <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2">
-                                <Logo />
-                            </Link>
+                className="container mx-auto max-w-7xl px-6">
+                <div className={cn("flex items-center justify-between transition-all duration-300 rounded-2xl px-4", isScrolled && "bg-background/80 backdrop-blur-lg border shadow-sm")}>
+                    <div className="flex items-center gap-6 py-3">
+                        <Link
+                            href="/"
+                            aria-label="home"
+                            className="flex items-center space-x-2">
+                            <Logo />
+                        </Link>
+                    </div>
+                    
+                    <div className="hidden lg:flex items-center gap-4">
+                        <Button asChild size="sm">
+                            <Link href="#">Book Demo</Link>
+                        </Button>
+                    </div>
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
-                        </div>
-                        
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <Button
-                                    asChild
-                                    size="sm">
-                                    <Link href="#">
-                                        <span>Book Demo</span>
-                                    </Link>
-                                </Button>
-                            </div>
-                        </div>
+                    <button
+                        onClick={() => setMenuState(!menuState)}
+                        aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                        className="relative z-20 -mr-2 block cursor-pointer p-2.5 lg:hidden">
+                        <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                        <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                    </button>
+                    
+                    {/* Mobile Menu */}
+                    <div className={cn("absolute top-full left-0 mt-2 w-full rounded-xl border bg-background shadow-lg lg:hidden", !menuState && "hidden")}>
+                         <div className="flex flex-col p-4">
+                             <Button asChild>
+                                <Link href="#">Book Demo</Link>
+                            </Button>
+                         </div>
                     </div>
                 </div>
             </nav>

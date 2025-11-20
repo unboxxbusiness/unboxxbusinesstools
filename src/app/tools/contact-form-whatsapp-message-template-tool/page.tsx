@@ -4,7 +4,7 @@ import WhatsappMessageTool from "@/components/contact-form-whatsapp-message-temp
 
 export default function ContactFormToWhatsappPage() {
   return (
-    <div className="w-full">
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Contact Form → WhatsApp Message Template Tool</h1>

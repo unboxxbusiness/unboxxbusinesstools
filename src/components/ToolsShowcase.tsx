@@ -45,15 +45,15 @@ const tools = [
 
 export default function ToolsShowcase() {
     return (
-        <section className="py-12 md:py-20">
+        <section className="py-12 md:py-20 w-full">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-                <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-                    <h2 className="text-balance text-4xl font-medium lg:text-5xl">Free Tools Built for Coaching Institutes</h2>
-                    <p>Use these tools to understand your lead leakage, improve follow-ups, and structure your admissions — then let us automate it all for you.</p>
+                <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
+                    <h2 className="text-balance text-3xl font-medium md:text-4xl lg:text-5xl">Free Tools Built for Coaching Institutes</h2>
+                    <p className="text-muted-foreground">Use these tools to understand your lead leakage, improve follow-ups, and structure your admissions — then let us automate it all for you.</p>
                 </div>
                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10 py-10 max-w-7xl mx-auto">
                     {tools.map((tool, index) => (
-                        <Feature key={tool.title} {...tool} index={index} total={tools.length} />
+                        <Feature key={tool.title} {...tool} />
                     ))}
                 </div>
                  <div className="text-center">
@@ -71,44 +71,28 @@ const Feature = ({
   description,
   icon,
   href,
-  index,
-  total
 }: {
   title: string;
   description: string;
   icon: React.ReactNode;
   href: string;
-  index: number;
-  total: number;
 }) => {
-  const numColsLg = 3; // We have a 3-column layout on large screens
-  const isFirstInRow = index % numColsLg === 0;
-  const isLastInRow = index % numColsLg === numColsLg - 1;
-  const isBottomRow = index >= total - (total % numColsLg || numColsLg);
-
   return (
     <Link
       href={href}
-      className={cn(
-        "flex flex-col py-10 relative group/feature border-b dark:border-neutral-800",
-        "lg:border-r",
-        isFirstInRow && "lg:border-l",
-        isLastInRow && "lg:border-r-0",
-        isBottomRow && "border-b-0",
-      )}
+      className="flex flex-col p-8 relative group/feature border-b lg:border-b-0 lg:border-r dark:border-neutral-800"
     >
       <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-muted to-transparent pointer-events-none" />
       
-      <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400">
-        {icon}
+      <div className="mb-4 relative z-10 text-primary">
+        {React.cloneElement(icon as React.ReactElement, { className: "h-6 w-6" })}
       </div>
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+      <div className="text-lg font-semibold mb-2 relative z-10">
+        <span className="group-hover/feature:translate-x-1 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
           {title}
         </span>
       </div>
-      <p className="text-sm text-neutral-600 dark:text-neutral-300 max-w-xs relative z-10 px-10 flex items-center">
+      <p className="text-sm text-neutral-600 dark:text-neutral-300 relative z-10 flex items-center">
         {description}
         <ArrowRight className="w-4 h-4 ml-2 text-gray-400 opacity-0 group-hover/feature:opacity-100 group-hover/feature:translate-x-1 transition-all" />
       </p>

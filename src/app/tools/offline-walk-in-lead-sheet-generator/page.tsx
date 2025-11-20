@@ -4,7 +4,7 @@ import OfflineLeadSheetGenerator from "@/components/offline-walk-in-lead-sheet-g
 
 export default function OfflineLeadSheetGeneratorPage() {
   return (
-    <div className="w-full">
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Offline Walk-In Lead Sheet Generator</h1>

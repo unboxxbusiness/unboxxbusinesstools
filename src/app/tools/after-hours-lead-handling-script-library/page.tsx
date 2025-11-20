@@ -4,7 +4,7 @@ import HowToUse from "@/components/after-hours-lead-handling-script-library/HowT
 
 export default function AfterHoursLeadHandlingPage() {
   return (
-    <>
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">After-Hours Lead Handling Script Library</h1>
@@ -16,6 +16,6 @@ export default function AfterHoursLeadHandlingPage() {
       <AfterHoursScriptTool />
 
       <HowToUse />
-    </>
+    </div>
   );
 }

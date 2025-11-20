@@ -4,7 +4,7 @@ import HowToUse from "@/components/landing-page-headline-generator/HowToUse";
 
 export default function LandingPageHeadlineGeneratorPage() {
   return (
-    <>
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Landing Page Headline Generator</h1>
@@ -16,6 +16,6 @@ export default function LandingPageHeadlineGeneratorPage() {
       <HeadlineGeneratorTool />
 
       <HowToUse />
-    </>
+    </div>
   );
 }
