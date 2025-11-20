@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -16,6 +16,12 @@ const tools = [
     description: 'Static templates based on course + question type.',
     href: '/tools/inquiry-auto-reply-script-generator',
     icon: <IconScript />,
+  },
+  {
+    title: 'Lead Source Tracker',
+    description: 'Track where your inquiries come from to optimize marketing spend.',
+    href: '/tools/lead-source-tracker',
+    icon: <IconChartPie />,
   }
 ];
 
