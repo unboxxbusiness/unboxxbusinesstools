@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Twitter, MessageSquare, CalendarCheck } from "lucide-react"
 import { Logo } from "./Logo";
 import Link from "next/link";
 
@@ -95,12 +95,16 @@ export function Footer() {
           </div>
            <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
-              <p>123 Education Lane</p>
-              <p>Knowledge City, 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@ubx.com</p>
-            </address>
+            <nav className="space-y-3 text-sm not-italic">
+                <Link href="#" className="flex items-center gap-2 transition-colors hover:text-primary">
+                    <MessageSquare className="h-4 w-4" />
+                    Chat on WhatsApp
+                </Link>
+                <Link href="/book-demo" className="flex items-center gap-2 transition-colors hover:text-primary">
+                    <CalendarCheck className="h-4 w-4" />
+                    Book a Free Demo
+                </Link>
+            </nav>
           </div>
            <div className="relative">
             <h2 className="mb-4 text-xl font-bold tracking-tight">Automate Your Admissions</h2>
