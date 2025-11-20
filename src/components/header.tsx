@@ -47,7 +47,7 @@ export const HeroHeader = () => {
                                     asChild
                                     size="sm">
                                     <Link href="#">
-                                        <span>Sign In</span>
+                                        <span>Book Demo</span>
                                     </Link>
                                 </Button>
                             </div>
