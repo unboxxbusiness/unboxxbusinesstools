@@ -82,7 +82,7 @@ export default function InquiryAutoReplyScriptGeneratorPage() {
   };
 
   return (
-    <main className="container py-12">
+    <div className="container py-12">
       <BackButton href="/tools" />
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Inquiry Auto-Reply Script Generator</h1>
@@ -152,6 +152,6 @@ export default function InquiryAutoReplyScriptGeneratorPage() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
