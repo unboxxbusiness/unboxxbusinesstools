@@ -33,9 +33,9 @@ export default function HeroSection() {
             <HeroHeader />
             <main className="overflow-hidden">
                 <section>
-                    <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-32 lg:pt-40">
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
-                            <div className="relative z-10 text-center lg:text-left">
+                    <div className="relative mx-auto max-w-6xl px-6 pb-20 pt-32 md:pt-40">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                            <div className="relative z-10 text-center md:text-left">
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.1}
@@ -49,7 +49,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground lg:mx-0">
+                                    className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground md:mx-0">
                                     A free resource platform for coaching institutes. Use calculators, scripts, and checklists to fix your lead handling — then automate everything with AI.
                                 </TextEffect>
 
@@ -58,7 +58,7 @@ export default function HeroSection() {
                                         ...transitionVariants,
                                     }}
                                     delay={0.8}
-                                    className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
+                                    className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
                                     <Button asChild size="lg">
                                         <Link href="/tools">Browse Free Tools</Link>
                                     </Button>
