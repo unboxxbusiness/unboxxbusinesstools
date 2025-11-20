@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -250,6 +250,12 @@ const productivityTools = [
     description: 'Provides ready-to-use call scripts for counsellors covering intros, questions, and closing.',
     href: '/tools/call-script-generator',
     icon: <IconPhoneCall />,
+  },
+  {
+    title: 'Feedback Collection Template Generator',
+    description: 'Creates feedback forms for demo classes to understand student interest.',
+    href: '/tools/feedback-collection-template-generator',
+    icon: <IconMessageCircleQuestion />,
   },
 ];
 
