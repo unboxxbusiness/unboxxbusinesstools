@@ -18,6 +18,12 @@ export const HeroHeader = () => {
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
     
+    const navLinks = [
+        { href: '/', label: 'Home' },
+        { href: '/about', label: 'About' },
+        { href: '/tools', label: 'Tools' },
+    ];
+
     return (
         <header className={cn("fixed top-0 z-50 w-full transition-all duration-300", isScrolled ? "py-2" : "py-4")}>
             <nav
@@ -33,6 +39,14 @@ export const HeroHeader = () => {
                         </Link>
                     </div>
                     
+                    <div className="hidden lg:flex items-center gap-6">
+                        {navLinks.map(link => (
+                            <Link key={link.href} href={link.href} className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+                                {link.label}
+                            </Link>
+                        ))}
+                    </div>
+
                     <div className="hidden lg:flex items-center gap-4">
                         <Button asChild size="sm">
                             <Link href="#">Book Demo</Link>
@@ -49,7 +63,12 @@ export const HeroHeader = () => {
                     
                     {/* Mobile Menu */}
                     <div className={cn("absolute top-full left-0 mt-2 w-full rounded-xl border bg-background shadow-lg lg:hidden", !menuState && "hidden")}>
-                         <div className="flex flex-col p-4">
+                         <div className="flex flex-col p-4 space-y-2">
+                            {navLinks.map(link => (
+                                <Link key={link.href} href={link.href} className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                    {link.label}
+                                </Link>
+                            ))}
                              <Button asChild>
                                 <Link href="#">Book Demo</Link>
                             </Button>
