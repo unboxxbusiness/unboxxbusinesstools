@@ -8,6 +8,10 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <Features />
+      <ToolsShowcase />
+      <HowItWorks />
+      <ToolsByCategory />
     </>
   );
 }
