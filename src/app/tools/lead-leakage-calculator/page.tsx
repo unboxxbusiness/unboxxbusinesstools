@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 
 export default function LeadLeakageCalculatorPage() {
   const [monthlyInquiries, setMonthlyInquiries] = useState(100);
@@ -52,7 +51,7 @@ export default function LeadLeakageCalculatorPage() {
           </div>
           <div className="p-6 pt-0 space-y-6">
             <div className="space-y-2">
-              <Label htmlFor="monthly-inquiries">Monthly Inquiries</Label>
+              <label htmlFor="monthly-inquiries" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Monthly Inquiries</label>
               <Input
                 id="monthly-inquiries"
                 type="number"
@@ -62,7 +61,7 @@ export default function LeadLeakageCalculatorPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="response-rate">Your Response Rate (%)</Label>
+              <label htmlFor="response-rate" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Your Response Rate (%)</label>
               <Input
                 id="response-rate"
                 type="number"
@@ -74,7 +73,7 @@ export default function LeadLeakageCalculatorPage() {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="avg-revenue">Average Revenue per Client</Label>
+              <label htmlFor="avg-revenue" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Average Revenue per Client</label>
               <Input
                 id="avg-revenue"
                 type="number"
