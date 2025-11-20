@@ -81,7 +81,7 @@ export default function ToolsPage() {
 
       <div className="w-full">
         <h2 className="text-2xl font-bold text-center mb-4">
-          ⭐ CATEGORY 1: Lead Capture Tools (8 Tools)
+          ⭐ Lead Capture & Qualification Tools
         </h2>
         <ToolsGrid tools={tools} />
       </div>
