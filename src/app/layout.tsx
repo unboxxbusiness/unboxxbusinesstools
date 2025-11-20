@@ -47,9 +47,6 @@ export const metadata: Metadata = {
     // Add your Twitter handle if you have one
     // creator: "@yourhandle", 
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
   alternates: {
     canonical: "/",
   },
