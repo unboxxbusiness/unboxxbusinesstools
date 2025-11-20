@@ -49,6 +49,7 @@ export default function Hero({ toolCount }: { toolCount: number }) {
                                 as="p"
                                 className="mx-auto mt-6 max-w-2xl text-pretty text-lg">
                                 A complete suite of free, easy-to-use tools to help you manage and grow your coaching business, from lead management to student engagement.
+No login. No cost. Built specifically for coaching & training institutes.
                             </TextEffect>
 
                         </div>
