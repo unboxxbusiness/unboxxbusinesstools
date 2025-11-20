@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneMissed } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -60,7 +60,13 @@ const leadCaptureTools = [
     title: 'Missed-Call Follow-Up Message Generator',
     description: 'Generates professional templates for returning missed calls.',
     href: '/tools/missed-call-follow-up-message-generator',
-    icon: <IconPhoneMissed />,
+    icon: <IconPhoneOff />,
+  },
+  {
+    title: 'Missed Inquiry Recovery Script Builder',
+    description: 'Polite templates to recover inquiries that were not answered in time.',
+    href: '/tools/missed-inquiry-recovery-script-builder',
+    icon: <IconRotateClockwise />,
   }
 ];
 
