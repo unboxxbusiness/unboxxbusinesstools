@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth, IconBellRinging, IconRecycle, IconMessageQuestion, IconUserOff, IconCash, IconPhoneOff, IconRotateClockwise, IconMicrophone, IconAnalyze, IconThumbUp, IconReportMoney, IconReceipt2, IconMessagesOff, IconAlarm, IconSpeakerphone, IconColumns, IconAd, IconBrandInstagram, IconGift, IconTargetArrow, IconPigMoney, IconReportAnalytics, IconReceiptRefund, IconUsers, IconCalendarEvent, IconClipboardList, IconPhoneCall, IconMessageCircleQuestion, IconTable, IconBrandWhatsapp } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 import { BackgroundGradient } from '@/components/ui/background-gradient';
 
@@ -70,10 +70,16 @@ const leadCaptureTools = [
   }
 ];
 
-const leadNurturingTools = [
+const communicationTools = [
+  {
+    title: 'WhatsApp Templates Library',
+    description: '100+ templates for follow-ups, fees, demos, and more.',
+    href: '/tools/whatsapp-templates-library',
+    icon: <IconBrandWhatsapp />,
+  },
   {
     title: '7-Day Follow-Up Sequence Generator',
-    description: 'Generates a 7-day WhatsApp follow-up plan to nurture new leads.',
+    description: 'Generates a 7-day WhatsApp plan to nurture new leads.',
     href: '/tools/7-day-follow-up-sequence-generator',
     icon: <IconTimeline />,
   },
@@ -265,7 +271,7 @@ const productivityTools = [
   },
 ];
 
-const allTools = [...leadCaptureTools, ...leadNurturingTools, ...leadConversionTools, ...marketingTools, ...analysisTools, ...productivityTools];
+const allTools = [...leadCaptureTools, ...communicationTools, ...leadConversionTools, ...marketingTools, ...analysisTools, ...productivityTools];
 
 export default function ToolsPage() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -282,7 +288,7 @@ export default function ToolsPage() {
   }, [searchQuery]);
 
   const displayedCaptureTools = filteredTools.filter(tool => leadCaptureTools.includes(tool));
-  const displayedNurturingTools = filteredTools.filter(tool => leadNurturingTools.includes(tool));
+  const displayedCommunicationTools = filteredTools.filter(tool => communicationTools.includes(tool));
   const displayedConversionTools = filteredTools.filter(tool => leadConversionTools.includes(tool));
   const displayedMarketingTools = filteredTools.filter(tool => marketingTools.includes(tool));
   const displayedAnalysisTools = filteredTools.filter(tool => analysisTools.includes(tool));
@@ -316,12 +322,12 @@ export default function ToolsPage() {
           </div>
         )}
 
-        {displayedNurturingTools.length > 0 && (
+        {displayedCommunicationTools.length > 0 && (
           <div className="w-full mb-16">
             <h2 className="text-2xl font-bold text-center">
-              🌱 Lead Nurturing &amp; Follow-Up Tools
+              📱 WhatsApp &amp; Communication Tools
             </h2>
-            <ToolsGrid tools={displayedNurturingTools} />
+            <ToolsGrid tools={displayedCommunicationTools} />
           </div>
         )}
 
