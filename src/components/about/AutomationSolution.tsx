@@ -50,8 +50,8 @@ export default function AutomationSolution() {
                      </div>
                      <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
                          <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-                             <Image src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658202/Gemini_Generated_Image_bx7bybbx7bybbx7b_x1rdjs.png" className="hidden rounded-[15px] dark:block" alt="automation illustration dark" width={1207} height={929} data-ai-hint="automation abstract dark" />
-                             <Image src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658202/Gemini_Generated_Image_bx7bybbx7bybbx7b_x1rdjs.png" className="rounded-[15px] shadow dark:hidden" alt="automation illustration light" width={1207} height={929} data-ai-hint="automation abstract light" />
+                             <Image src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658286/Gemini_Generated_Image_vog2ytvog2ytvog2_jtuhtj.png" className="hidden rounded-[15px] dark:block" alt="automation illustration dark" width={1207} height={929} data-ai-hint="automation abstract dark" />
+                             <Image src="https://res.cloudinary.com/dhrigocvd/image/upload/v1763658286/Gemini_Generated_Image_vog2ytvog2ytvog2_jtuhtj.png" className="rounded-[15px] shadow dark:hidden" alt="automation illustration light" width={1207} height={929} data-ai-hint="automation abstract light" />
                          </div>
                      </div>
                  </div>
