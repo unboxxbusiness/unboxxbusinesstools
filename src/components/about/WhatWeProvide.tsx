@@ -1,59 +1,61 @@
 'use client';
 
-import { CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Cpu, Users, Wrench } from 'lucide-react'
+import { ReactNode } from 'react'
 
 const features = [
-  "Capture leads properly",
-  "Follow up consistently",
-  "Send clear information",
-  "Increase demo attendance",
-  "Convert more admissions"
+  {
+    title: "Free Tools",
+    description: "Calculators, templates, and scripts to diagnose and fix your admissions process.",
+    icon: <Wrench className="size-6" aria-hidden />,
+  },
+  {
+    title: "AI Automation",
+    description: "Turn your fixed process into a 24/7 automated system that works for you.",
+    icon: <Cpu className="size-6" aria-hidden />,
+  },
+  {
+    title: "Improved Team Performance",
+    description: "Standardized processes mean everyone performs like your best counsellor.",
+    icon: <Users className="size-6" aria-hidden />,
+  },
 ];
+
+const CardDecorator = ({ children }: { children: ReactNode }) => (
+  <div className="mask-radial-from-40% mask-radial-to-60% relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
+    <div
+      aria-hidden
+      className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px] dark:opacity-50"
+    />
+    <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t">{children}</div>
+  </div>
+);
 
 export default function WhatWeProvide() {
   return (
-    <section className="py-16 md:py-32 bg-muted/30">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-12 lg:grid-cols-5 lg:gap-24">
-          <div className="lg:col-span-2">
-            <div className="md:pr-6 lg:pr-0">
-              <h2 className="text-4xl font-semibold lg:text-5xl">What We Provide</h2>
-              <p className="mt-6 text-muted-foreground">
-                We offer free tools, templates, and checklists that help you:
-              </p>
-            </div>
-            <ul className="mt-8 divide-y border-y">
-              {features.map((feature) => (
-                <li key={feature} className="flex items-center gap-3 py-3">
-                  <CheckCircle className="size-5 text-green-500" />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="border-border/50 relative rounded-3xl border p-3 lg:col-span-3">
-            <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent p-px dark:from-zinc-700">
-              <Image
-                src="https://picsum.photos/seed/payments-dark/1207/929"
-                className="hidden rounded-[15px] dark:block"
-                alt="payments illustration dark"
-                width={1207}
-                height={929}
-                data-ai-hint="dashboard dark"
-              />
-              <Image
-                src="https://picsum.photos/seed/payments-light/1207/929"
-                className="rounded-[15px] shadow dark:hidden"
-                alt="payments illustration light"
-                width={1207}
-                height={929}
-                data-ai-hint="dashboard light"
-              />
-            </div>
-          </div>
+    <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
+      <div className="@container mx-auto max-w-5xl px-6">
+        <div className="text-center">
+          <h2 className="text-balance text-4xl font-semibold lg:text-5xl">What We Provide</h2>
+          <p className="mt-4 text-muted-foreground">
+            We offer free tools to fix your process, and AI automation to scale it.
+          </p>
         </div>
+        <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+          {features.map((feature) => (
+            <div key={feature.title} className="group shadow-zinc-950/5">
+              <CardHeader className="pb-3">
+                <CardDecorator>{feature.icon}</CardDecorator>
+                <h3 className="mt-6 font-medium">{feature.title}</h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm">{feature.description}</p>
+              </CardContent>
+            </div>
+          ))}
+        </Card>
       </div>
     </section>
-  )
+  );
 }
