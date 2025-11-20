@@ -4,11 +4,11 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Read our privacy policy to understand how we collect, use, and protect your information when you use our website and tools.",
   openGraph: {
-    title: "Privacy Policy | UBX",
+    title: "Privacy Policy | Unboxx Business",
     description: "Read our privacy policy to understand how we collect, use, and protect your information when you use our website and tools.",
   },
   twitter: {
-    title: "Privacy Policy | UBX",
+    title: "Privacy Policy | Unboxx Business",
     description: "Read our privacy policy to understand how we collect, use, and protect your information when you use our website and tools.",
   },
   alternates: {

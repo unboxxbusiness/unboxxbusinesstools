@@ -7,11 +7,11 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: {
-    title: `${title} | UBX Tools`,
+    title: `${title} | Unboxx Business Tools`,
     description,
   },
   twitter: {
-    title: `${title} | UBX Tools`,
+    title: `${title} | Unboxx Business Tools`,
     description,
   },
   alternates: {

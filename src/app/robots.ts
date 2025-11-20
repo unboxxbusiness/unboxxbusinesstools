@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = 'https://ubx.com'; // Replace with your actual domain
+  const siteUrl = 'https://unboxxbusiness.com'; // Replace with your actual domain
 
   return {
     rules: {

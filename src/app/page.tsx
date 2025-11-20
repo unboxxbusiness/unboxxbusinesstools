@@ -8,8 +8,8 @@ import ToolsShowcase from "@/components/ToolsShowcase";
 import Script from 'next/script';
 
 const siteConfig = {
-  name: "UBX",
-  url: "https://ubx.com", // Replace with your actual domain
+  name: "Unboxx Business",
+  url: "https://unboxxbusiness.com", // Replace with your actual domain
   description: "Free tools and AI automation to help coaching institutes fix lead handling, improve follow-ups, and boost admissions.",
 };
 

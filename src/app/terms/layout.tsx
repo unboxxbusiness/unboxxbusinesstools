@@ -4,11 +4,11 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Read our Terms of Use to understand the rules and guidelines for using our website, tools, and resources.",
   openGraph: {
-    title: "Terms of Use | UBX",
+    title: "Terms of Use | Unboxx Business",
     description: "Read our Terms of Use to understand the rules and guidelines for using our website, tools, and resources.",
   },
   twitter: {
-    title: "Terms of Use | UBX",
+    title: "Terms of Use | Unboxx Business",
     description: "Read our Terms of Use to understand the rules and guidelines for using our website, tools, and resources.",
   },
   alternates: {

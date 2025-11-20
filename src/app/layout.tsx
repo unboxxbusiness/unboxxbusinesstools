@@ -11,8 +11,8 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 const inter = Inter({ subsets: ["latin"] });
 
 const siteConfig = {
-  name: "UBX",
-  url: "https://ubx.com", // Replace with your actual domain
+  name: "Unboxx Business",
+  url: "https://unboxxbusiness.com", // Replace with your actual domain
   description: "Free tools to fix lead handling and boost admissions for coaching institutes.",
 };
 

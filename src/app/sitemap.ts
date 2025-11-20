@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { tools } from '@/app/tools/toolsData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = 'https://ubx.com'; // Replace with your actual domain
+  const siteUrl = 'https://unboxxbusiness.com'; // Replace with your actual domain
 
   const staticPages = [
     '',
