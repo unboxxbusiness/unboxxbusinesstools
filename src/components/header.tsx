@@ -5,7 +5,7 @@ import { Menu } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import React from 'react'
 import { cn } from '@/lib/utils'
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from './ui/sheet'
 
 export const HeroHeader = () => {
     const [isScrolled, setIsScrolled] = React.useState(false)
@@ -62,6 +62,7 @@ export const HeroHeader = () => {
                             </Button>
                           </SheetTrigger>
                           <SheetContent side="right">
+                            <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                             <div className="flex flex-col p-4 space-y-2">
                                 <div className='pb-4'>
                                      <Link
