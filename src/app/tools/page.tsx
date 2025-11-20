@@ -2,7 +2,7 @@
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter } from '@tabler/icons-react';
 
 const tools = [
   {
@@ -34,6 +34,12 @@ const tools = [
     description: 'Converts form submissions into clean WhatsApp callback messages.',
     href: '/tools/contact-form-whatsapp-message-template-tool',
     icon: <IconMessage />,
+  },
+  {
+    title: 'Offline Walk-In Lead Sheet Generator',
+    description: 'Creates a printable lead capture sheet for walk-in visitors.',
+    href: '/tools/offline-walk-in-lead-sheet-generator',
+    icon: <IconPrinter />,
   },
 ];
 
