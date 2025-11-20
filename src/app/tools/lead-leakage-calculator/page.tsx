@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function LeadLeakageCalculatorPage() {
   const [monthlyInquiries, setMonthlyInquiries] = useState(100);
@@ -37,6 +39,12 @@ export default function LeadLeakageCalculatorPage() {
 
   return (
     <main className="container py-12">
+       <div className="mb-8">
+        <Link href="/tools" className="inline-flex items-center text-sm font-medium text-muted-foreground hover:text-primary">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Back to Tools
+        </Link>
+      </div>
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight">Lead Leakage Calculator</h1>
         <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
