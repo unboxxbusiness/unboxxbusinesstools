@@ -129,18 +129,18 @@ export const HeroHeader = () => {
                        <NavigationMenu>
                           <NavigationMenuList>
                              <NavigationMenuItem>
-                                <Link href="/" passHref>
-                                    <NavigationMenuLink asChild>
-                                      <a className={navigationMenuTriggerStyle()}>Home</a>
-                                    </NavigationMenuLink>
-                                </Link>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/" className={navigationMenuTriggerStyle()}>
+                                        Home
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <Link href="/about" passHref>
-                                    <NavigationMenuLink asChild>
-                                      <a className={navigationMenuTriggerStyle()}>About</a>
-                                    </NavigationMenuLink>
-                                </Link>
+                                <NavigationMenuLink asChild>
+                                    <Link href="/about" className={navigationMenuTriggerStyle()}>
+                                        About
+                                    </Link>
+                                </NavigationMenuLink>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                               <NavigationMenuTrigger>Tools</NavigationMenuTrigger>
