@@ -1,10 +1,9 @@
-
 'use client';
 import { useState, useEffect } from 'react';
 import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import ToolsGrid from '@/components/ToolsGrid';
-import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline } from '@tabler/icons-react';
+import { IconCalculator, IconScript, IconChartPie, IconClockHour3, IconMessage, IconPrinter, IconTypography, IconListCheck, IconTimeline, IconCalendarMonth } from '@tabler/icons-react';
 import Hero from '@/components/tools/Hero';
 
 const leadCaptureTools = [
@@ -64,6 +63,12 @@ const leadNurturingTools = [
     description: 'Generates a 7-day WhatsApp follow-up plan to nurture new leads.',
     href: '/tools/7-day-follow-up-sequence-generator',
     icon: <IconTimeline />,
+  },
+  {
+    title: '30-Day Nurture Calendar Generator',
+    description: 'Creates a month-long engagement plan for undecided leads.',
+    href: '/tools/30-day-nurture-calendar-generator',
+    icon: <IconCalendarMonth />,
   }
 ];
 
