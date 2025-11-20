@@ -172,6 +172,12 @@ const marketingTools = [
     description: 'Provides short, medium, and long ad copy templates based on your offer.',
     href: '/tools/facebook-instagram-ad-copy-generator',
     icon: <IconAd />,
+  },
+  {
+    title: 'Google Ads Headline Generator',
+    description: 'Creates packs of 15-30 SEO-friendly headline variations for search ads.',
+    href: '/tools/google-ads-headline-generator',
+    icon: <IconAd />,
   }
 ];
 
